@@ -74,7 +74,8 @@ body {
     padding: 12px 2px;
     background-color: #FFFFFF;
     color: #000000;
-    border: 7px solid #000000;
+    border: 4px solid #000000;
+    border-bottom: 7px solid #000000;
     font-weight: bold;
     font-size: 0.85rem;
     cursor: pointer;
