@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Rhino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+
+        <div class="mitad-izquierda">
+            <img src="Logo.png" alt="Logo de la empresa" class="logo">
+            <p class="texto-personal">
+                En este portal usted podrá iniciar sesión para consultar todos sus respectivos datos como parte del personal de Rhino.
+            </p>
+        </div>
+
+        <div class="mitad-derecha">
+
+            <div class="tab-bar">
+                <button class="tab-btn activo" onclick="abrirTab(event, 'tab-empleado')">Empleado</button>
+                <button class="tab-btn" onclick="abrirTab(event, 'tab-analista')">Analista</button>
+                <button class="tab-btn" onclick="abrirTab(event, 'tab-supervisor')">Supervisor</button>
+                <button class="tab-btn" onclick="abrirTab(event, 'tab-gerente')">Gerente general</button>
+            </div>
+
+            <div class="seccion-login">
+                <div id="tab-empleado" class="contenido-tab en-pantalla">
+                    <h2>Ingreso: Empleado</h2>
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <button class="btn-login">Iniciar sesión</button>
+                </div>
+
+                <div id="tab-analista" class="contenido-tab">
+                    <h2>Ingreso: Analista</h2>
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <button class="btn-login">Iniciar sesión</button>
+                </div>
+
+                <div id="tab-supervisor" class="contenido-tab">
+                    <h2>Ingreso: Supervisor</h2>
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <button class="btn-login">Iniciar sesión</button>
+                </div>
+
+                <div id="tab-gerente" class="contenido-tab">
+                    <h2>Ingreso: Gerente General</h2>
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <button class="btn-login">Iniciar sesión</button>
+                </div>
+            </div>
+
+            <a href="https://rhinosas.com.co" class="link-quienes-somos">¿Quienes somos?</a>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
