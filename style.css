@@ -167,37 +167,178 @@ input[type="password"] {
 
 /* ================= DISEÑO RESPONSIVE ================= */
 @media (max-width: 768px) {
-    .contenedor-principal {
+    /* Ajuste para celulares */
+    .seccion-superior {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .contenedor-perfil {
+        flex-direction: column; /* Apila el nombre y el botón de cerrar sesión en celular */
+        gap: 10px;
+    }
+
+    .info-usuario {
+        text-align: center;
+    }
+
+    /* El resto de tu CSS de celular se mantiene igual... */
+    .seccion-navegacion {
         flex-direction: column;
     }
 
-    .mitad-izquierda {
+    .nav-btn {
         width: 100%;
         border-right: none;
-        border-bottom: 7px solid #000000;
-        padding: 30px 20px;
+        border-bottom: 5px solid #000000;
+        padding: 15px;
     }
 
-    .logo {
-        width: 90%;
+    .nav-btn:last-child {
+        border-bottom: none;
     }
+}
 
-    .mitad-derecha {
-        width: 100%;
-        padding: 40px 20px 100px 20px;
-    }
+/* ================= ESTILOS PARA PRINCIPAL Y MENÚ SUPERIOR ================= */
 
-    .tab-btn {
+.body-principal {
+    background-color: #FFFFFF; /* Fondo general de las páginas internas */
+    min-height: 100vh;
+}
+
+.header-principal {
+    background-color: #29166f; /* Azul oscuro para todo el encabezado */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* --- SECCIÓN 1 --- */
+.seccion-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 7px solid #000000;
+}
+
+.logo-pequeno {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Nuevo contenedor flex para alinear textos a la derecha */
+.contenedor-perfil {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Separación entre el nombre y el botón de cerrar sesión */
+}
+
+.info-usuario {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+.info-usuario .nombre {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.info-usuario .rol {
+    font-size: 0.9rem;
+    color: #F1C40F;
+    font-weight: bold;
+}
+
+/* Texto de cerrar sesión */
+.btn-cerrar-sesion {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.btn-cerrar-sesion:hover {
+    color: #D32F2F; /* Rojo suave al pasar el mouse para indicar acción destructiva/salida */
+}
+
+/* --- SECCIÓN 2 --- */
+.seccion-navegacion {
+    display: flex;
+    border-bottom: 7px solid #000000;
+}
+
+.nav-btn {
+    flex: 1; /* Distribuye el espacio equitativamente en PC */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 5px;
+    background-color: #29166f;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border-right: 5px solid #000000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Quitar el borde derecho al último botón para que no choque con el final de la pantalla */
+.nav-btn:last-child {
+    border-right: none;
+}
+
+/* Hover verde oscuro, tal como en el botón de login */
+.nav-btn:hover {
+    background-color: #03923e;
+}
+
+/* Botón de la página actual en amarillo */
+.nav-btn.activo {
+    background-color: #F1C40F;
+    color: #000000;
+}
+
+/* ================= DISEÑO RESPONSIVE PARA EL MENÚ ================= */
+@media (max-width: 1024px) {
+    /* Ajuste intermedio para pantallas medianas / tablets */
+    .nav-btn {
         font-size: 0.75rem;
         padding: 10px 2px;
     }
+}
 
-    .link-quienes-somos {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        margin-top: 40px;
-        text-align: right;
-        display: block;
+@media (max-width: 768px) {
+    /* Ajuste para celulares */
+    .seccion-superior {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .info-usuario {
+        text-align: center;
+    }
+
+    .seccion-navegacion {
+        flex-direction: column; /* Apila los botones de navegación verticalmente */
+    }
+
+    .nav-btn {
+        width: 100%;
+        border-right: none;
+        border-bottom: 5px solid #000000; /* El separador pasa a ser horizontal */
+        padding: 15px;
+    }
+
+    .nav-btn:last-child {
+        border-bottom: none;
     }
 }
