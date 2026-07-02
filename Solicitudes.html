@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Rhino</title>
+    <title>Solicitudes - Rhino</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -42,6 +42,70 @@
     </header>
 
     <main class="contenido-pagina">
+
+        <div class="contenedor-solicitudes">
+
+            <!-- SECCIÓN 1: FORMULARIO DE NUEVA SOLICITUD -->
+            <h1 class="titulo-seccion">Radicar Nueva Solicitud</h1>
+
+            <form class="tarjeta-formulario">
+
+                <div class="grupo-input">
+                    <label for="tipo-solicitud">Categoría de la solicitud:</label>
+                    <select id="tipo-solicitud" class="input-brutalista">
+                        <option value="" disabled selected>-- Seleccione una opción --</option>
+                        <option value="horas-extra">Solicitud de horas extra</option>
+                        <option value="vacaciones">Solicitud de día de descanso (Vacaciones)</option>
+                        <option value="justificado">Solicitud de día de descanso (Justificado)</option>
+                        <option value="aumento">Solicitud de aumento</option>
+                        <option value="ascenso">Solicitud de ascenso</option>
+                        <option value="renuncia">Anuncio de renuncia</option>
+                        <option value="cambio-horario">Solicitud de cambio de horario</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="detalle-solicitud">Detalles de la solicitud (Máximo 1000 caracteres):</label>
+                    <!-- El atributo maxlength="1000" restringe nativamente al usuario a no escribir más de esa cantidad -->
+                    <textarea id="detalle-solicitud" class="input-brutalista area-texto" maxlength="1000" placeholder="Escriba aquí los motivos o detalles de su solicitud..."></textarea>
+                </div>
+
+                <!-- Un botón del tipo "button" para que no recargue la página en nuestra maqueta -->
+                <button type="button" class="btn-enviar-solicitud">Radicar solicitud</button>
+
+            </form>
+
+
+            <!-- SECCIÓN 2: HISTORIAL DE SOLICITUDES -->
+            <h2 class="subtitulo-seccion">Mis Solicitudes Anteriores</h2>
+
+            <div class="lista-historial">
+
+                <!-- Solicitud Anterior 1 -->
+                <div class="tarjeta-historial historial-1">
+                    <div class="cabecera-historial">
+                        <h3>Solicitud de día de descanso (Vacaciones)</h3>
+                        <span class="estado-etiqueta estado-revision">En revisión</span>
+                    </div>
+                    <p class="fecha-historial"><strong>Fecha de radicado:</strong> 01 de Julio de 2026 - 14:30 hrs</p>
+                    <p class="detalle-historial">Solicito mis 15 días de vacaciones reglamentarias correspondientes a este año laborado, a partir de la primera semana del próximo mes.</p>
+                </div>
+
+                <!-- Solicitud Anterior 2 -->
+                <div class="tarjeta-historial historial-2">
+                    <div class="cabecera-historial">
+                        <h3>Solicitud de horas extra</h3>
+                        <span class="estado-etiqueta estado-aprobada">Aprobada</span>
+                    </div>
+                    <p class="fecha-historial"><strong>Fecha de radicado:</strong> 15 de Junio de 2026 - 09:15 hrs</p>
+                    <p class="detalle-historial">Solicitud de autorización para realizar 4 horas extra este fin de semana con el fin de culminar la documentación técnica del nuevo módulo del sistema.</p>
+                </div>
+
+            </div>
+
+        </div>
+
     </main>
 
     <script src="script.js"></script>

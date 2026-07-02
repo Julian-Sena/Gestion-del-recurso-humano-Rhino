@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Rhino</title>
+    <title>Resultados - Rhino</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -42,6 +42,113 @@
     </header>
 
     <main class="contenido-pagina">
+
+        <div class="contenedor-resultados">
+
+            <h1 class="titulo-seccion">Resultados de Evaluación</h1>
+
+            <!-- CUADRÍCULA DE CATEGORÍAS -->
+            <div class="grid-evaluaciones">
+
+                <!-- 1. PUNTUALIDAD (30%) -->
+                <div class="tarjeta-evaluacion">
+                    <div class="cabecera-categoria">
+                        <h2>Puntualidad</h2>
+                        <span class="peso-categoria">30%</span>
+                    </div>
+                    <div class="lista-metricas">
+                        <div class="metrica">
+                            <span class="nombre-metrica">Hora de llegada</span>
+                            <span class="puntaje-metrica">9.0</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="nombre-metrica">Tiempo de culminación de tareas</span>
+                            <span class="puntaje-metrica">8.0</span>
+                        </div>
+                    </div>
+                    <div class="promedio-categoria">
+                        <span>Promedio:</span> <strong>8.5</strong>
+                    </div>
+                </div>
+
+                <!-- 2. CALIDAD (30%) -->
+                <div class="tarjeta-evaluacion">
+                    <div class="cabecera-categoria">
+                        <h2>Calidad</h2>
+                        <span class="peso-categoria">30%</span>
+                    </div>
+                    <div class="lista-metricas">
+                        <div class="metrica">
+                            <span class="nombre-metrica">Precisión en entregables</span>
+                            <span class="puntaje-metrica">9.5</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="nombre-metrica">Atención al detalle</span>
+                            <span class="puntaje-metrica">9.5</span>
+                        </div>
+                    </div>
+                    <div class="promedio-categoria">
+                        <span>Promedio:</span> <strong>9.5</strong>
+                    </div>
+                </div>
+
+                <!-- 3. COLABORACIÓN (15%) -->
+                <div class="tarjeta-evaluacion">
+                    <div class="cabecera-categoria">
+                        <h2>Colaboración</h2>
+                        <span class="peso-categoria">15%</span>
+                    </div>
+                    <div class="lista-metricas">
+                        <div class="metrica">
+                            <span class="nombre-metrica">Trabajo en equipo</span>
+                            <span class="puntaje-metrica">8.0</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="nombre-metrica">Comunicación asertiva</span>
+                            <span class="puntaje-metrica">9.0</span>
+                        </div>
+                    </div>
+                    <div class="promedio-categoria">
+                        <span>Promedio:</span> <strong>8.5</strong>
+                    </div>
+                </div>
+
+                <!-- 4. CUMPLIMIENTO (25%) -->
+                <div class="tarjeta-evaluacion">
+                    <div class="cabecera-categoria">
+                        <h2>Cumplimiento</h2>
+                        <span class="peso-categoria">25%</span>
+                    </div>
+                    <div class="lista-metricas">
+                        <div class="metrica">
+                            <span class="nombre-metrica">Seguimiento de normativas</span>
+                            <span class="puntaje-metrica">10.0</span>
+                        </div>
+                        <div class="metrica">
+                            <span class="nombre-metrica">Asistencia a reuniones</span>
+                            <span class="puntaje-metrica">9.0</span>
+                        </div>
+                    </div>
+                    <div class="promedio-categoria">
+                        <span>Promedio:</span> <strong>9.5</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- PROMEDIO GENERAL PONDERADO -->
+            <!-- Cálculo: (8.5*0.30) + (9.5*0.30) + (8.5*0.15) + (9.5*0.25) = 9.05 (Redondeado a 9.1) -->
+            <div class="tarjeta-promedio-final">
+                <h2>Promedio General Ponderado</h2>
+                <div class="contenedor-puntaje-final">
+                    <span class="puntaje-final">9.1</span>
+                    <span class="escala-final">/ 10</span>
+                </div>
+                <p class="mensaje-desempeno">¡Excelente desempeño! Sigue aportando valor al equipo Rhino.</p>
+            </div>
+
+        </div>
+
     </main>
 
     <script src="script.js"></script>
