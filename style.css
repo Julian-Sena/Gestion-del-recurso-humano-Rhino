@@ -287,6 +287,88 @@ input[type="password"] {
     color: #D32F2F;
 }
 
+/* ================= 4. ESTILOS PARA LA PÁGINA DE INICIO (NOTICIAS) ================= */
+
+.contenido-pagina {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center; /* Centra el contenedor de noticias en la pantalla */
+}
+
+.contenedor-noticias {
+    width: 100%;
+    max-width: 1000px; /* Evita que las noticias ocupen todo el ancho en pantallas grandes */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Separación vertical entre cada noticia */
+}
+
+.titulo-seccion {
+    color: #29166f;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Tarjeta base de noticia */
+.tarjeta-noticia {
+    display: flex;
+    border: 6px solid #000000; /* Borde recto de 6px solicitado */
+    padding: 25px;
+    align-items: center; /* Centra el texto y la imagen verticalmente */
+    gap: 30px; /* Separación entre la imagen y el texto */
+    box-shadow: 8px 8px 0px rgba(0,0,0,1); /* Sombra sólida negra para darle un toque moderno/brutalista al diseño */
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-noticia:hover {
+    transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el mouse */
+}
+
+/* Colores de fondo solicitados */
+.noticia-1 { background-color: #cbdfca; }
+.noticia-2 { background-color: #dfdfca; }
+.noticia-3 { background-color: #cdcadf; }
+
+/* Estilos de la imagen */
+.img-noticia {
+    width: 220px; /* Tamaño fijo */
+    aspect-ratio: 1 / 1; /* Escala 1:1 (cuadrada) */
+    object-fit: cover; /* Evita que la imagen se deforme, rellenando el cuadrado */
+    border: 4px solid #000000; /* Borde de 4px solicitado */
+    flex-shrink: 0; /* Evita que la imagen se encoja si hay mucho texto */
+}
+
+/* Contenedor del texto */
+.texto-noticia {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* El texto siempre a la izquierda */
+}
+
+.texto-noticia h2 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.texto-noticia p {
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.6; /* Mejora la lectura del párrafo */
+}
+
+/* Clases para alternar la posición de la imagen */
+.img-izquierda {
+    flex-direction: row;
+}
+
+.img-derecha {
+    flex-direction: row-reverse; /* Voltea el orden: la imagen pasa a la derecha, el texto a la izquierda */
+}
+
 /* ================= 3. DISEÑO RESPONSIVE GLOBAL (TABLETS Y CELULARES) ================= */
 
 @media (max-width: 1024px) {
@@ -358,5 +440,23 @@ input[type="password"] {
 
     .nav-btn:last-child {
         border-bottom: none;
+    }
+
+    /* --- Ajustes para las Noticias en celular --- */
+    .tarjeta-noticia {
+        flex-direction: column !important; /* Fuerza a que en celular la imagen quede arriba y el texto abajo, sin importar si era derecha o izquierda */
+        padding: 15px;
+        gap: 15px;
+        border-width: 4px; /* Un borde un poco más delgado en móvil */
+        box-shadow: 4px 4px 0px rgba(0,0,0,1);
+    }
+
+    .img-noticia {
+        width: 100%; /* La imagen ocupa todo el ancho de la tarjeta en celular */
+        max-width: 300px;
+    }
+
+    .titulo-seccion {
+        font-size: 1.5rem;
     }
 }
