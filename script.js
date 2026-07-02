@@ -67,6 +67,32 @@ function cerrarSesion() {
     window.location.href = "index.html";
 }
 
+// ================= LÓGICA PARA GESTIÓN DE OFERTAS =================
+
+function desplegarPostulantes(idOferta) {
+    const contenedor = document.getElementById(idOferta);
+
+    // Alternar la clase 'oculto'
+    if (contenedor.classList.contains('oculto')) {
+        contenedor.classList.remove('oculto');
+    } else {
+        contenedor.classList.add('oculto');
+    }
+}
+
+// Función para abrir el modal y recibir el nombre del candidato
+function abrirModalContratacion(nombreCandidato) {
+    // Cambiamos el texto del modal para que muestre el nombre real
+    document.getElementById('texto-candidato-modal').innerHTML = `Candidato: <strong>${nombreCandidato}</strong>`;
+
+    // Mostramos el modal quitando la clase 'oculto'
+    document.getElementById('modal-contratacion').classList.remove('oculto');
+}
+
+// Función para cerrar el modal
+function cerrarModal() {
+    document.getElementById('modal-contratacion').classList.add('oculto');
+}
 
 // ================= LÓGICA DEL MENÚ SUPERIOR (Principal.html y futuras páginas) =================
 

@@ -797,6 +797,266 @@ input[type="password"] {
     margin-top: 10px;
 }
 
+/* ================= 8. ESTILOS PARA GESTIÓN DE OFERTAS LABORALES ================= */
+
+.contenedor-ofertas {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* --- FORMULARIO DE OFERTAS --- */
+.grid-2-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btn-accion-principal {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #29166f;
+    color: #FFFFFF;
+    border: 4px solid #000000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.btn-accion-principal:hover {
+    background-color: #03923e;
+}
+
+/* --- TARJETAS DE OFERTAS PUBLICADAS --- */
+.lista-ofertas {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tarjeta-oferta {
+    border: 6px solid #000000;
+    box-shadow: 8px 8px 0px rgba(0,0,0,1);
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-oferta:hover {
+    transform: translateY(-5px); /* Efecto hover solicitado mantenido aquí también */
+}
+
+/* Colores pastel reciclados */
+.color-fondo-1 { background-color: #dfdfca; }
+.color-fondo-2 { background-color: #cdcadf; }
+
+.cabecera-oferta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+}
+
+.info-oferta-resumen h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.etiqueta-postulados {
+    background-color: #F1C40F;
+    color: #000000;
+    font-weight: bold;
+    border: 3px solid #000000;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+}
+
+.btn-desplegar {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 4px solid #000000;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-desplegar:hover {
+    background-color: #29166f;
+    color: #FFFFFF;
+}
+
+/* --- LISTA DESPLEGABLE DE POSTULANTES --- */
+.oculto {
+    display: none !important;
+}
+
+.contenedor-postulantes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 25px 25px 25px; /* Relleno solo a los lados y abajo, no arriba */
+    border-top: 4px dashed #000000;
+    margin-top: 10px;
+    padding-top: 25px;
+}
+
+.tarjeta-postulante {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 4px solid #000000;
+    padding: 15px;
+    gap: 20px;
+}
+
+.foto-postulante {
+    width: 60px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 3px solid #000000;
+}
+
+.datos-postulante {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.datos-postulante h4 {
+    font-size: 1.1rem;
+    color: #000000;
+}
+
+.datos-postulante p {
+    font-size: 0.95rem;
+    color: #333333;
+    font-weight: bold;
+}
+
+.btn-cv {
+    background-color: #29166f;
+    color: #FFFFFF;
+    border: 4px solid #000000;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cv:hover {
+    background-color: #03923e;
+}
+
+/* --- BOTONES DE LA TARJETA DE POSTULANTE --- */
+.acciones-postulante {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-contratar {
+    background-color: #03923e; /* Verde oscuro para resaltar la acción principal */
+    color: #FFFFFF;
+    border: 4px solid #000000;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-contratar:hover {
+    background-color: #1B4F35; /* Verde más oscuro */
+    transform: translateY(-3px);
+}
+
+/* --- ESTILOS DEL MODAL DE CONTRATACIÓN --- */
+.fondo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 22, 111, 0.85); /* Azul oscuro de tu paleta con transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+.tarjeta-modal {
+    background-color: #FFFFFF;
+    border: 6px solid #000000;
+    box-shadow: 12px 12px 0px rgba(0,0,0,1); /* Sombra extragrande para que resalte más */
+    padding: 40px;
+    width: 90%;
+    max-width: 500px; /* No permite que sea gigante en PC */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo-modal {
+    font-size: 1.6rem;
+    color: #29166f;
+    border-bottom: 4px solid #000000;
+    padding-bottom: 10px;
+}
+
+.subtitulo-modal {
+    font-size: 1.1rem;
+    color: #333333;
+}
+
+.formulario-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.botones-modal {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-cancelar {
+    flex: 1;
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 4px solid #000000;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cancelar:hover {
+    background-color: #D32F2F; /* Rojo para cancelar */
+    color: #FFFFFF;
+}
+
+.btn-confirmar-contrato {
+    flex: 2; /* Ocupa más espacio visual que el de cancelar */
+    background-color: #F1C40F; /* Amarillo */
+    color: #000000;
+    border: 4px solid #000000;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-confirmar-contrato:hover {
+    background-color: #03923e; /* Cambia a verde al confirmar */
+    color: #FFFFFF;
+}
+
 /* ================= 3. DISEÑO RESPONSIVE GLOBAL (TABLETS Y CELULARES) ================= */
 
 @media (max-width: 1024px) {
@@ -918,5 +1178,30 @@ input[type="password"] {
 
     .puntaje-final {
         font-size: 3rem;
+    }
+
+    /* --- Ajustes para Gestión de Ofertas en celular --- */
+    .grid-2-columnas {
+        grid-template-columns: 1fr; /* Rompe las columnas del formulario a 1 sola */
+    }
+
+    .cabecera-oferta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .tarjeta-postulante {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .datos-postulante {
+        align-items: center;
+    }
+
+    .btn-cv {
+        width: 100%;
     }
 }

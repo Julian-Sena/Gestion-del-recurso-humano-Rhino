@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Rhino</title>
+    <title>Gestión de ofertas - Rhino</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -43,6 +43,199 @@
     </header>
 
     <main class="contenido-pagina">
+
+        <div class="contenedor-ofertas">
+
+            <!-- SECCIÓN 1: FORMULARIO PARA NUEVA OFERTA -->
+            <h1 class="titulo-seccion">Publicar Nueva Oferta Laboral</h1>
+
+            <form class="tarjeta-formulario">
+
+                <div class="grupo-input">
+                    <label for="cargo-oferta">Nombre del cargo:</label>
+                    <input type="text" id="cargo-oferta" class="input-brutalista" placeholder="Ej: Desarrollador Backend Java">
+                </div>
+
+                <div class="grid-2-columnas">
+                    <div class="grupo-input">
+                        <label for="salario-oferta">Salario ofrecido:</label>
+                        <input type="text" id="salario-oferta" class="input-brutalista" placeholder="Ej: $ 3.500.000 COP">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="ubicacion-oferta">Ubicación:</label>
+                        <input type="text" id="ubicacion-oferta" class="input-brutalista" placeholder="Ej: Bogotá, Colombia (Presencial)">
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="duracion-oferta">Duración del contrato (Opcional):</label>
+                    <input type="text" id="duracion-oferta" class="input-brutalista" placeholder="Ej: Término indefinido">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="descripcion-oferta">Descripción de la vacante y requisitos:</label>
+                    <textarea id="descripcion-oferta" class="input-brutalista area-texto" placeholder="Detalle aquí las responsabilidades para integrarse a Rhino Soluciones Integrales S.A.S..."></textarea>
+                </div>
+
+                <button type="button" class="btn-accion-principal">Publicar oferta laboral</button>
+
+            </form>
+
+            <!-- SECCIÓN 2: OFERTAS PUBLICADAS Y POSTULANTES -->
+            <h2 class="subtitulo-seccion">Ofertas Activas y Postulantes</h2>
+
+            <div class="lista-ofertas">
+
+                <!-- OFERTA 1 -->
+                <div class="tarjeta-oferta color-fondo-1">
+                    <div class="cabecera-oferta">
+                        <div class="info-oferta-resumen">
+                            <h3>Ayudante de limpieza</h3>
+                            <span class="etiqueta-postulados">3 Postulados</span>
+                        </div>
+                        <button class="btn-desplegar" onclick="desplegarPostulantes('oferta-1')">Ver postulados ▼</button>
+                    </div>
+
+                    <!-- Lista Desplegable (Oculta por defecto) -->
+                    <div id="oferta-1" class="contenedor-postulantes oculto">
+
+                        <div class="tarjeta-postulante">
+        <img src="Pos1.png" alt="Foto postulante 1" class="foto-postulante">
+        <div class="datos-postulante">
+            <h4>Carlos Ramírez</h4>
+            <p>Experiencia: 4 años</p>
+        </div>
+        <!-- Agrupamos los botones -->
+        <div class="acciones-postulante">
+            <button class="btn-cv">Ver Hoja de Vida</button>
+            <!-- Nuevo botón que abre el modal -->
+            <button class="btn-contratar" onclick="abrirModalContratacion('Carlos Ramírez')">Contratar</button>
+        </div>
+    </div>
+
+                        <div class="tarjeta-postulante">
+                            <img src="Pos2.png" alt="Foto postulante 2" class="foto-postulante">
+                            <div class="datos-postulante">
+                                <h4>Laura Gómez</h4>
+                                <p>Experiencia: 6 años</p>
+                            </div> <!-- Agrupamos los botones -->
+        <div class="acciones-postulante">
+            <button class="btn-cv">Ver Hoja de Vida</button>
+            <!-- Nuevo botón que abre el modal -->
+            <button class="btn-contratar" onclick="abrirModalContratacion('Laura Gómez')">Contratar</button>
+        </div>
+                        </div>
+
+                        <div class="tarjeta-postulante">
+                            <img src="Pos3.png" alt="Foto postulante 3" class="foto-postulante">
+                            <div class="datos-postulante">
+                                <h4>Mateo Vargas</h4>
+                                <p>Experiencia: 2 años</p>
+                            </div> <!-- Agrupamos los botones -->
+        <div class="acciones-postulante">
+            <button class="btn-cv">Ver Hoja de Vida</button>
+            <!-- Nuevo botón que abre el modal -->
+            <button class="btn-contratar" onclick="abrirModalContratacion('Mateo Vargas')">Contratar</button>
+        </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- OFERTA 2 -->
+                <div class="tarjeta-oferta color-fondo-2">
+                    <div class="cabecera-oferta">
+                        <div class="info-oferta-resumen">
+                            <h3>Diseñador UX/UI</h3>
+                            <span class="etiqueta-postulados">3 Postulados</span>
+                        </div>
+                        <button class="btn-desplegar" onclick="desplegarPostulantes('oferta-2')">Ver postulados ▼</button>
+                    </div>
+
+                    <!-- Lista Desplegable (Oculta por defecto) -->
+                    <div id="oferta-2" class="contenedor-postulantes oculto">
+
+                        <div class="tarjeta-postulante">
+                            <img src="Pos4.png" alt="Foto postulante 4" class="foto-postulante">
+                            <div class="datos-postulante">
+                                <h4>Andrea Castro</h4>
+                                <p>Experiencia: 5 años</p>
+                            </div> <!-- Agrupamos los botones -->
+        <div class="acciones-postulante">
+            <button class="btn-cv">Ver Hoja de Vida</button>
+            <!-- Nuevo botón que abre el modal -->
+            <button class="btn-contratar" onclick="abrirModalContratacion('Andrea Castro')">Contratar</button>
+        </div>
+                        </div>
+
+                        <div class="tarjeta-postulante">
+                            <img src="Pos5.png" alt="Foto postulante 5" class="foto-postulante">
+                            <div class="datos-postulante">
+                                <h4>Felipe Martínez</h4>
+                                <p>Experiencia: 3 años</p>
+                            </div> <!-- Agrupamos los botones -->
+        <div class="acciones-postulante">
+            <button class="btn-cv">Ver Hoja de Vida</button>
+            <!-- Nuevo botón que abre el modal -->
+            <button class="btn-contratar" onclick="abrirModalContratacion('Felipe Martínez')">Contratar</button>
+        </div>
+                        </div>
+
+                        <div class="tarjeta-postulante">
+                            <img src="Pos6.png" alt="Foto postulante 6" class="foto-postulante">
+                            <div class="datos-postulante">
+                                <h4>Valentina Ruiz</h4>
+                                <p>Experiencia: 1 año</p>
+                            </div> <!-- Agrupamos los botones -->
+        <div class="acciones-postulante">
+            <button class="btn-cv">Ver Hoja de Vida</button>
+            <!-- Nuevo botón que abre el modal -->
+            <button class="btn-contratar" onclick="abrirModalContratacion('Valentina Ruiz')">Contratar</button>
+        </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MODAL DE CONTRATACIÓN (Oculto por defecto) -->
+    <div id="modal-contratacion" class="fondo-modal oculto">
+        <div class="tarjeta-modal">
+
+            <h2 class="titulo-modal">Registrar Contratación</h2>
+            <p id="texto-candidato-modal" class="subtitulo-modal">Candidato: <strong>Nombre</strong></p>
+
+            <form class="formulario-modal">
+                <div class="grupo-input">
+                    <label>Fecha de ingreso:</label>
+                    <input type="date" class="input-brutalista">
+                </div>
+                <div class="grupo-input">
+                    <label>Salario final acordado:</label>
+                    <input type="text" class="input-brutalista" placeholder="Ej: $ 3.500.000 COP">
+                </div>
+                <div class="grupo-input">
+                    <label>Tipo de contrato:</label>
+                    <select class="input-brutalista">
+                        <option value="indefinido">Término Indefinido</option>
+                        <option value="fijo">Término Fijo</option>
+                        <option value="prestacion">Prestación de Servicios</option>
+                    </select>
+                </div>
+            </form>
+
+            <div class="botones-modal">
+                <button type="button" class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+                <button type="button" class="btn-confirmar-contrato">Confirmar Registro</button>
+            </div>
+
+        </div>
+    </div>
+
     </main>
 
     <script src="script.js"></script>
