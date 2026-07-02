@@ -12,6 +12,8 @@ body {
     background-color: #29166f; /* Azul oscuro solicitado */
 }
 
+/* ================= 1. ESTILOS DEL LOGIN (index.html) ================= */
+
 .contenedor-principal {
     display: flex;
     flex-direction: row;
@@ -48,7 +50,7 @@ body {
 /* MITAD DERECHA */
 .mitad-derecha {
     width: 50%;
-    background-color: #29166f; /* Azul oscuro solicitado */
+    background-color: #29166f;
     position: relative;
     padding: 60px 50px;
     display: flex;
@@ -110,7 +112,7 @@ body {
 
 .contenido-tab h2 {
     margin-bottom: 20px;
-    color: #29166f; /* Azul oscuro solicitado */
+    color: #29166f;
 }
 
 /* Inputs y Botón de Inicio de Sesión */
@@ -127,7 +129,7 @@ input[type="password"] {
 .btn-login {
     width: 100%;
     padding: 15px;
-    background-color: #29166f; /* Azul oscuro solicitado */
+    background-color: #29166f;
     color: #FFFFFF;
     border: 4px solid #000000;
     font-weight: bold;
@@ -137,7 +139,7 @@ input[type="password"] {
 }
 
 .btn-login:hover {
-    background-color: #03923e; /* Verde oscuro solicitado (suave con la transición) */
+    background-color: #03923e; /* Verde oscuro solicitado */
 }
 
 /* Link Inferior Derecho */
@@ -152,10 +154,10 @@ input[type="password"] {
 }
 
 .link-quienes-somos:hover {
-    color: #F1C40F; /* Amarillo */
+    color: #F1C40F;
 }
 
-/* Estilo para el mensaje de error de credenciales */
+/* Mensaje de error */
 .mensaje-error {
     color: #D32F2F;
     font-weight: bold;
@@ -164,76 +166,94 @@ input[type="password"] {
     font-size: 1rem;
     min-height: 24px;
 }
-
-/* ================= DISEÑO RESPONSIVE ================= */
-@media (max-width: 768px) {
-    /* Ajuste para celulares */
-    .seccion-superior {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .contenedor-perfil {
-        flex-direction: column; /* Apila el nombre y el botón de cerrar sesión en celular */
-        gap: 10px;
-    }
-
-    .info-usuario {
-        text-align: center;
-    }
-
-    /* El resto de tu CSS de celular se mantiene igual... */
-    .seccion-navegacion {
-        flex-direction: column;
-    }
-
-    .nav-btn {
-        width: 100%;
-        border-right: none;
-        border-bottom: 5px solid #000000;
-        padding: 15px;
-    }
-
-    .nav-btn:last-child {
-        border-bottom: none;
-    }
-}
-
-/* ================= ESTILOS PARA PRINCIPAL Y MENÚ SUPERIOR ================= */
+/* ================= 2. ESTILOS PARA PRINCIPAL Y MENÚ SUPERIOR ================= */
 
 .body-principal {
-    background-color: #FFFFFF; /* Fondo general de las páginas internas */
+    background-color: #FFFFFF;
     min-height: 100vh;
 }
 
 .header-principal {
-    background-color: #29166f; /* Azul oscuro para todo el encabezado */
+    background-color: #29166f;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-/* --- SECCIÓN 1 --- */
+/* --- HEADER ÚNICO (Logo + Menú + Perfil) --- */
 .seccion-superior {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    border-bottom: 7px solid #000000;
+    padding: 10px 30px; /* Reducimos el espacio vertical para que el menú sea más delgado */
+    border-bottom: 7px solid #000000; /* Borde inferior estricto de toda la barra */
+    gap: 15px; /* Espacio entre el logo, los botones y el perfil */
 }
 
 .logo-pequeno {
-    height: 50px;
+    height: 40px; /* Lo achicamos un poquito para optimizar la altura de la barra */
     width: auto;
     object-fit: contain;
+    flex-shrink: 0; /* Evita que el logo se deforme si la pantalla es estrecha */
 }
 
-/* Nuevo contenedor flex para alinear textos a la derecha */
+/* --- HEADER ÚNICO (Logo + Menú + Perfil) --- */
+.seccion-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* CAMBIO CLAVE: Permite que los elementos interiores ocupen el 100% de la altura */
+    padding: 0 30px; /* CAMBIO CLAVE: 0 padding arriba y abajo para que los botones toquen los bordes */
+    border-bottom: 7px solid #000000;
+    gap: 15px;
+}
+
+.logo-pequeno {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    align-self: center; /* Mantiene el logo centrado sin que se estire */
+    margin: 15px 0; /* Este margen es el que ahora define el alto total de la barra azul */
+}
+
+/* --- NAVEGACIÓN (EN EL MEDIO) --- */
+.seccion-navegacion {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center; /* Centra el texto del botón verticalmente */
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px; /* Quitamos el padding vertical fijo; ahora el botón se estira solo */
+    background-color: #29166f;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.75rem;
+    border-right: 5px solid #000000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #03923e;
+}
+
+.nav-btn.activo {
+    background-color: #F1C40F;
+    color: #000000;
+}
+
+/* --- PERFIL DERECHO --- */
 .contenedor-perfil {
     display: flex;
     align-items: center;
-    gap: 20px; /* Separación entre el nombre y el botón de cerrar sesión */
+    gap: 20px;
+    flex-shrink: 0;
+    align-self: center; /* Mantiene el texto del usuario centrado verticalmente */
 }
 
 .info-usuario {
@@ -244,17 +264,16 @@ input[type="password"] {
 }
 
 .info-usuario .nombre {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
 .info-usuario .rol {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #F1C40F;
     font-weight: bold;
 }
 
-/* Texto de cerrar sesión */
 .btn-cerrar-sesion {
     color: #FFFFFF;
     font-weight: bold;
@@ -265,50 +284,12 @@ input[type="password"] {
 }
 
 .btn-cerrar-sesion:hover {
-    color: #D32F2F; /* Rojo suave al pasar el mouse para indicar acción destructiva/salida */
+    color: #D32F2F;
 }
 
-/* --- SECCIÓN 2 --- */
-.seccion-navegacion {
-    display: flex;
-    border-bottom: 7px solid #000000;
-}
+/* ================= 3. DISEÑO RESPONSIVE GLOBAL (TABLETS Y CELULARES) ================= */
 
-.nav-btn {
-    flex: 1; /* Distribuye el espacio equitativamente en PC */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 15px 5px;
-    background-color: #29166f;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.85rem;
-    border-right: 5px solid #000000;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Quitar el borde derecho al último botón para que no choque con el final de la pantalla */
-.nav-btn:last-child {
-    border-right: none;
-}
-
-/* Hover verde oscuro, tal como en el botón de login */
-.nav-btn:hover {
-    background-color: #03923e;
-}
-
-/* Botón de la página actual en amarillo */
-.nav-btn.activo {
-    background-color: #F1C40F;
-    color: #000000;
-}
-
-/* ================= DISEÑO RESPONSIVE PARA EL MENÚ ================= */
 @media (max-width: 1024px) {
-    /* Ajuste intermedio para pantallas medianas / tablets */
     .nav-btn {
         font-size: 0.75rem;
         padding: 10px 2px;
@@ -316,11 +297,47 @@ input[type="password"] {
 }
 
 @media (max-width: 768px) {
-    /* Ajuste para celulares */
+    /* --- Ajustes para el Login (index.html) --- */
+    .contenedor-principal {
+        flex-direction: column;
+    }
+
+    .mitad-izquierda {
+        width: 100%;
+        border-right: none;
+        border-bottom: 7px solid #000000;
+        padding: 30px 20px;
+    }
+
+    .mitad-derecha {
+        width: 100%;
+        padding: 40px 20px 100px 20px;
+    }
+
+    .tab-btn {
+        font-size: 0.75rem;
+        padding: 10px 2px;
+    }
+
+    .link-quienes-somos {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 40px;
+        text-align: right;
+        display: block;
+    }
+
+    /* --- Ajustes para el Menú Superior (Principal.html y demás) --- */
     .seccion-superior {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+
+    .contenedor-perfil {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .info-usuario {
@@ -328,13 +345,14 @@ input[type="password"] {
     }
 
     .seccion-navegacion {
-        flex-direction: column; /* Apila los botones de navegación verticalmente */
+        flex-direction: column;
     }
 
     .nav-btn {
         width: 100%;
-        border-right: none;
-        border-bottom: 5px solid #000000; /* El separador pasa a ser horizontal */
+        border-right: none !important; /* Limpiamos los bordes laterales en celular */
+        border-left: none !important;
+        border-bottom: 5px solid #000000;
         padding: 15px;
     }
 

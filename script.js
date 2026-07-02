@@ -70,26 +70,70 @@ function cerrarSesion() {
 
 // ================= LÓGICA DEL MENÚ SUPERIOR (Principal.html y futuras páginas) =================
 
-// Este evento se ejecuta automáticamente al cargar cualquier página
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Buscamos si en la página actual existen los elementos del menú superior
     const spanNombre = document.getElementById('nombre-usuario');
     const spanRol = document.getElementById('rol-usuario');
 
     if (spanNombre && spanRol) {
-        // Recuperamos los datos guardados; si no hay nada, ponemos valores por defecto
         const nombreGuardado = localStorage.getItem('sesionNombre') || "Usuario Desconocido";
-        let rolGuardado = localStorage.getItem('sesionRol') || "Sin Rol";
+        let rolGuardado = localStorage.getItem('sesionRol') || "empleado";
 
-        // Darle formato visual adecuado al rol para imprimirlo en pantalla
-        if (rolGuardado === 'empleado') rolGuardado = "Empleado";
-        if (rolGuardado === 'analista') rolGuardado = "Analista";
-        if (rolGuardado === 'supervisor') rolGuardado = "Supervisor";
-        if (rolGuardado === 'gerente') rolGuardado = "Gerente General";
+        // 1. INYECCIÓN DE DATOS DEL USUARIO
+        let nombreRolVisible = "";
+        if (rolGuardado === 'empleado') nombreRolVisible = "Empleado";
+        if (rolGuardado === 'analista') nombreRolVisible = "Analista";
+        if (rolGuardado === 'supervisor') nombreRolVisible = "Supervisor";
+        if (rolGuardado === 'gerente') nombreRolVisible = "Gerente General";
 
-        // Inyectamos el texto en el HTML
         spanNombre.textContent = nombreGuardado;
-        spanRol.textContent = rolGuardado;
+        spanRol.textContent = nombreRolVisible;
+
+
+        // 2. LÓGICA DE PERMISOS (MOSTRAR/OCULTAR BOTONES)
+
+        // Primero, ocultamos todos los botones por defecto
+        const todosLosBotones = document.querySelectorAll('.nav-btn');
+        todosLosBotones.forEach(btn => btn.style.display = 'none');
+
+        // Todos los roles comparten estos 3 botones, así que los mostramos siempre
+        document.getElementById('nav-inicio').style.display = 'flex';
+        document.getElementById('nav-horarios').style.display = 'flex';
+        document.getElementById('nav-solicitudes').style.display = 'flex';
+
+        // Ahora mostramos los botones específicos según el rol guardado
+        if (rolGuardado === 'empleado') {
+            document.getElementById('nav-resultados').style.display = 'flex';
+
+        } else if (rolGuardado === 'supervisor') {
+            document.getElementById('nav-gestion-horarios').style.display = 'flex';
+            document.getElementById('nav-personal').style.display = 'flex';
+            document.getElementById('nav-gestion-solicitudes').style.display = 'flex';
+
+        } else if (rolGuardado === 'analista') {
+            document.getElementById('nav-gestion-ofertas').style.display = 'flex';
+
+        } else if (rolGuardado === 'gerente') {
+            document.getElementById('nav-gestion-horarios').style.display = 'flex';
+            document.getElementById('nav-personal').style.display = 'flex';
+            document.getElementById('nav-gestion-solicitudes').style.display = 'flex';
+            document.getElementById('nav-gestion-evaluaciones').style.display = 'flex';
+        }
+
+        // 3. ARREGLO VISUAL DE LOS BORDES LATERALES
+        if (window.innerWidth > 768) {
+            const botonesVisibles = Array.from(todosLosBotones).filter(btn => btn.style.display === 'flex');
+
+            // Nos aseguramos de que todos tengan borde derecho y ninguno izquierdo por defecto
+            botonesVisibles.forEach(btn => {
+                btn.style.borderRight = '5px solid #000000';
+                btn.style.borderLeft = 'none';
+            });
+
+            // Al primer botón visible de la lista le ponemos un borde izquierdo para "cerrar" el menú
+            if (botonesVisibles.length > 0) {
+                botonesVisibles[0].style.borderLeft = '5px solid #000000';
+            }
+        }
     }
 });
