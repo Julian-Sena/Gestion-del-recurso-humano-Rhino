@@ -1,15 +1,15 @@
-/* ================= CSS ACTUALIZADO Y CORREGIDO ================= */
+/* ================= CSS ACTUALIZADO CON NUEVA PALETA DE COLORES ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    border-radius: 0 !important;
+    border-radius: 0 !important; /* Fuerza bordes completamente rectos */
 }
 
 body {
     min-height: 100vh;
-    background-color: #172A45;
+    background-color: #29166f; /* Azul oscuro solicitado */
 }
 
 .contenedor-principal {
@@ -32,12 +32,8 @@ body {
 }
 
 .logo {
-    /* --- CORRECCIÓN CLAVE --- */
-    /* Eliminamos el ancho fijo (450px) y el aspect-ratio: 1/1.
-       Ahora la imagen llena el 90% del ancho del contenedor izquierdo,
-       permitiendo que su forma ancha (775x322) se maximice. */
     width: 90%;
-    max-width: 100%; /* Asegura que no se desborde */
+    max-width: 100%;
     object-fit: contain;
     margin-bottom: 20px;
 }
@@ -52,7 +48,7 @@ body {
 /* MITAD DERECHA */
 .mitad-derecha {
     width: 50%;
-    background-color: #172A45;
+    background-color: #29166f; /* Azul oscuro solicitado */
     position: relative;
     padding: 60px 50px;
     display: flex;
@@ -74,7 +70,7 @@ body {
     padding: 12px 2px;
     background-color: #FFFFFF;
     color: #000000;
-    border: 4px solid #000000;
+    border: 5px solid #000000;
     border-bottom: 7px solid #000000;
     font-weight: bold;
     font-size: 0.85rem;
@@ -87,11 +83,11 @@ body {
 }
 
 .tab-btn:hover {
-    background-color: #F1C40F;
+    background-color: #F1C40F; /* Amarillo */
 }
 
 .tab-btn.activo {
-    background-color: #F1C40F;
+    background-color: #F1C40F; /* Amarillo */
 }
 
 /* Sección Login - Pegada a las pestañas */
@@ -114,7 +110,7 @@ body {
 
 .contenido-tab h2 {
     margin-bottom: 20px;
-    color: #172A45;
+    color: #29166f; /* Azul oscuro solicitado */
 }
 
 /* Inputs y Botón de Inicio de Sesión */
@@ -131,7 +127,7 @@ input[type="password"] {
 .btn-login {
     width: 100%;
     padding: 15px;
-    background-color: #172A45;
+    background-color: #29166f; /* Azul oscuro solicitado */
     color: #FFFFFF;
     border: 4px solid #000000;
     font-weight: bold;
@@ -141,7 +137,7 @@ input[type="password"] {
 }
 
 .btn-login:hover {
-    background-color: #1B4F35;
+    background-color: #03923e; /* Verde oscuro solicitado (suave con la transición) */
 }
 
 /* Link Inferior Derecho */
@@ -156,7 +152,17 @@ input[type="password"] {
 }
 
 .link-quienes-somos:hover {
-    color: #F1C40F;
+    color: #F1C40F; /* Amarillo */
+}
+
+/* Estilo para el mensaje de error de credenciales */
+.mensaje-error {
+    color: #D32F2F;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1rem;
+    min-height: 24px;
 }
 
 /* ================= DISEÑO RESPONSIVE ================= */
@@ -173,7 +179,7 @@ input[type="password"] {
     }
 
     .logo {
-        width: 90%; /* Se mantiene grande y adaptable en móvil */
+        width: 90%;
     }
 
     .mitad-derecha {

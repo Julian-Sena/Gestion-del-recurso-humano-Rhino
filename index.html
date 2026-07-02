@@ -32,30 +32,34 @@
             <div class="seccion-login">
                 <div id="tab-empleado" class="contenido-tab en-pantalla">
                     <h2>Ingreso: Empleado</h2>
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
-                    <button class="btn-login">Iniciar sesión</button>
+                    <input type="text" id="input-user-empleado" placeholder="Usuario">
+                    <input type="password" id="input-pass-empleado" placeholder="Contraseña">
+                    <button class="btn-login" onclick="validarLogin('empleado')">Iniciar sesión</button>
+                    <p id="error-empleado" class="mensaje-error"></p>
                 </div>
 
                 <div id="tab-analista" class="contenido-tab">
                     <h2>Ingreso: Analista</h2>
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
-                    <button class="btn-login">Iniciar sesión</button>
+                    <input type="text" id="input-user-analista" placeholder="Usuario">
+                    <input type="password" id="input-pass-analista" placeholder="Contraseña">
+                    <button class="btn-login" onclick="validarLogin('analista')">Iniciar sesión</button>
+                    <p id="error-analista" class="mensaje-error"></p>
                 </div>
 
                 <div id="tab-supervisor" class="contenido-tab">
                     <h2>Ingreso: Supervisor</h2>
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
-                    <button class="btn-login">Iniciar sesión</button>
+                    <input type="text" id="input-user-supervisor" placeholder="Usuario">
+                    <input type="password" id="input-pass-supervisor" placeholder="Contraseña">
+                    <button class="btn-login" onclick="validarLogin('supervisor')">Iniciar sesión</button>
+                    <p id="error-supervisor" class="mensaje-error"></p>
                 </div>
 
                 <div id="tab-gerente" class="contenido-tab">
                     <h2>Ingreso: Gerente General</h2>
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
-                    <button class="btn-login">Iniciar sesión</button>
+                    <input type="text" id="input-user-gerente" placeholder="Usuario">
+                    <input type="password" id="input-pass-gerente" placeholder="Contraseña">
+                    <button class="btn-login" onclick="validarLogin('gerente')">Iniciar sesión</button>
+                    <p id="error-gerente" class="mensaje-error"></p>
                 </div>
             </div>
 
