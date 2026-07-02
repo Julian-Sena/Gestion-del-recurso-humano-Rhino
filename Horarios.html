@@ -42,7 +42,116 @@
 
     </header>
 
-    <main class="contenido-pagina">
+   <main class="contenido-pagina">
+        <div class="contenedor-horarios">
+
+            <h1 class="titulo-seccion">Mi Horario</h1>
+
+            <!-- SECCIÓN 1: CONTADORES DE HORAS -->
+            <div class="resumen-horas">
+
+                <!-- Mes Anterior -->
+                <div class="tarjeta-mes mes-anterior">
+                    <h2 class="titulo-mes">Mes Anterior</h2>
+                    <div class="grid-horas">
+                        <div class="item-hora">
+                            <span class="etiqueta-hora">Horas Normales</span>
+                            <span class="valor-hora">160 hrs</span>
+                        </div>
+                        <div class="item-hora">
+                            <span class="etiqueta-hora">Horas Extra</span>
+                            <span class="valor-hora">12 hrs</span>
+                        </div>
+                        <div class="item-hora">
+                            <span class="etiqueta-hora">Recargo Nocturno</span>
+                            <span class="valor-hora">24 hrs</span>
+                        </div>
+                        <div class="item-hora">
+                            <span class="etiqueta-hora">Extra con Recargo</span>
+                            <span class="valor-hora">4 hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mes Actual -->
+                <div class="tarjeta-mes mes-actual">
+                    <h2 class="titulo-mes">Mes Actual (En curso)</h2>
+                    <div class="grid-horas">
+                        <div class="item-hora">
+                            <span class="etiqueta-hora">Horas Normales</span>
+                            <span class="valor-hora">80 hrs</span>
+                        </div>
+                        <div class="item-hora">
+                            <span class="etiqueta-hora">Horas Extra</span>
+                            <span class="valor-hora">5 hrs</span>
+                        </div>
+                        <div class="item-hora">
+                            <span class="etiqueta-hora">Recargo Nocturno</span>
+                            <span class="valor-hora">8 hrs</span>
+                        </div>
+                        <div class="item-hora">
+                            <span class="etiqueta-hora">Extra con Recargo</span>
+                            <span class="valor-hora">0 hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECCIÓN 2: LEYENDA DE COLORES -->
+            <div class="leyenda-turnos">
+                <p><span class="cuadro-leyenda turno-m"></span> <strong>M:</strong> Mañana</p>
+                <p><span class="cuadro-leyenda turno-t"></span> <strong>T:</strong> Tarde</p>
+                <p><span class="cuadro-leyenda turno-n"></span> <strong>N:</strong> Noche</p>
+                <p><span class="cuadro-leyenda turno-d"></span> <strong>D:</strong> Descanso</p>
+            </div>
+
+            <!-- SECCIÓN 3: TABLA PRÓXIMOS 15 DÍAS -->
+            <h2 class="subtitulo-seccion">Próximos 15 días</h2>
+            <div class="tabla-responsive">
+                <table class="tabla-turnos">
+                    <thead>
+                        <tr>
+                            <th>Lunes 1</th><th>Martes 2</th><th>Miércoles 3</th><th>Jueves 4</th><th>Viernes 5</th>
+                            <th>Sábado 6</th><th>Domingo 7</th><th>Lunes 8</th><th>Martes 9</th><th>Miércoles 10</th>
+                            <th>Jueves 11</th><th>Viernes 12</th><th>Sábado 13</th><th>Domingo 14</th><th>Lunes 15</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- Muestra de 5 días de trabajo y 2 de descanso (D) por semana -->
+                            <td class="turno-m">M</td><td class="turno-m">M</td><td class="turno-m">M</td><td class="turno-m">M</td><td class="turno-m">M</td>
+                            <td class="turno-d">D</td><td class="turno-d">D</td>
+                            <td class="turno-t">T</td><td class="turno-t">T</td><td class="turno-t">T</td>
+                            <td class="turno-t">T</td><td class="turno-t">T</td><td class="turno-d">D</td><td class="turno-d">D</td><td class="turno-n">N</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- SECCIÓN 4: TABLA ÚLTIMOS 15 DÍAS -->
+            <h2 class="subtitulo-seccion">Últimos 15 días</h2>
+            <div class="tabla-responsive">
+                <table class="tabla-turnos">
+                    <thead>
+                        <tr>
+                            <th>Domingo 16</th><th>Lunes 17</th><th>Martes 18</th><th>Miércoles 19</th><th>Jueves 20</th>
+                            <th>Viernes 21</th><th>Sábado 22</th><th>Domingo 23</th><th>Lunes 24</th><th>Martes 25</th>
+                            <th>Miércoles 26</th><th>Jueves 27</th><th>Viernes 28</th><th>Sábado 29</th><th>Domingo 30</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="turno-n">N</td><td class="turno-n">N</td><td class="turno-n">N</td><td class="turno-n">N</td><td class="turno-n">N</td>
+                            <td class="turno-d">D</td><td class="turno-d">D</td>
+                            <td class="turno-m">M</td><td class="turno-m">M</td><td class="turno-m">M</td>
+                            <td class="turno-m">M</td><td class="turno-m">M</td><td class="turno-d">D</td><td class="turno-d">D</td><td class="turno-m">M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
     </main>
 
     <script src="script.js"></script>
