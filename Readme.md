@@ -29,6 +29,9 @@ El sistema digital contempla las siguientes funcionalidades divididas por módul
    * Solicitudes de aumento salarial o ascenso.
    * Cambios de horario.
    * Anuncios anticipados de renuncia.
+   <img width="1325" height="649" alt="image" src="https://github.com/user-attachments/assets/3e49af84-9d02-4da9-8b62-ad9dd25b4d52" />
+<img width="1297" height="643" alt="image" src="https://github.com/user-attachments/assets/7416d7f6-3102-4b0b-91a5-e51c41c3c963" />
+
 ### Módulo 4: Evaluación de Empleados
  * **Configuración de criterios:** Creación de parámetros personalizados basados en la organización (puntualidad, cumplimiento, responsabilidad, actitud).
  * **Resultados:** Consolidación digital de los resultados de desempeño e informes detallados.
