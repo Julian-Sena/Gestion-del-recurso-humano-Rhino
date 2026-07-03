@@ -510,6 +510,7 @@ input[type="password"] {
 
 /* ================= 6. ESTILOS PARA LA PÁGINA DE SOLICITUDES ================= */
 
+
 .contenedor-solicitudes {
     width: 100%;
     max-width: 850px; /* Ancho restringido para que el formulario no sea kilométrico a lo ancho */
@@ -1309,6 +1310,143 @@ input[type="password"] {
 
 .btn-guardar:hover { background-color: #1B4F35; }
 
+/* ================= 11. ESTILOS PARA GESTIÓN DE SOLICITUDES (ADMIN) ================= */
+
+.contenedor-gestion-solicitudes {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.lista-solicitudes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- NUEVOS COLORES DE FONDO PARA TARJETAS DE SOLICITUD --- */
+
+/* Por defecto (Nuevas - Sección 1) */
+.tarjeta-solicitud {
+    border: 6px solid #000000;
+    background-color: #FFFFFF; /* Fondo blanco para las nuevas */
+    box-shadow: 6px 6px 0px rgba(0,0,0,1);
+    transition: transform 0.2s ease;
+}
+
+/* Estado Pendiente (Sección 2) */
+.estado-borde-pendiente {
+    background-color: #FEF9E7; /* Fondo amarillo muy suave */
+    border-left: 6px solid #F1C40F;
+}
+
+/* Estado Aprobada (Sección 3) */
+.estado-borde-aprobada {
+    background-color: #E8F8F5; /* Fondo verde muy suave */
+    border-left: 6px solid #03923e;
+}
+
+/* Estado Rechazada (Sección 3) */
+.estado-borde-rechazada {
+    background-color: #FDE8E8; /* Fondo rojo muy suave */
+    border-left: 6px solid #D32F2F;
+}
+
+.estado-rechazada {
+    background-color: #D32F2F;
+    color: #FFFFFF;
+}
+
+.cabecera-solicitud-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+.info-resumen-admin h3 {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+/* Ajuste para que la etiqueta "En revisión" no se corte */
+    .datos-empleado-admin {
+        display: flex;
+        flex-direction: column; /* Cambiamos a columna para apilar */
+        align-items: flex-start;
+        gap: 8px; /* Espacio entre el nombre/fecha y la etiqueta */
+    }
+
+
+
+.contenido-solicitud {
+    padding: 0 25px 25px 25px;
+    border-top: 4px dashed #000000;
+    margin-top: 10px;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detalle-texto-admin {
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.anexos-admin a {
+    color: #29166f;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-right: 15px;
+}
+
+/* Cajas de resolución (Lo que escribe el admin) */
+.caja-motivo-resolucion {
+    background-color: #f2f2f2;
+    border: 3px solid #000000;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.aprobada-bg { background-color: #cbdfca; } /* Verde pastel */
+.rechazada-bg { background-color: #fce4e4; } /* Rojo pastel */
+
+.caja-motivo-resolucion h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Botones de Resolución */
+.botones-resolucion {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.botones-resolucion button {
+    flex: 1;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 4px solid #000000;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-aprobar { background-color: #03923e; color: #FFFFFF; }
+.btn-aprobar:hover { background-color: #1B4F35; }
+
+.btn-pendiente { background-color: #F1C40F; color: #000000; }
+.btn-pendiente:hover { background-color: #d4ac0d; }
+
+.btn-rechazar { background-color: #D32F2F; color: #FFFFFF; }
+.btn-rechazar:hover { background-color: #9A0007; }
+
 /* ================= 3. DISEÑO RESPONSIVE GLOBAL (TABLETS Y CELULARES) ================= */
 
 @media (max-width: 1024px) {
@@ -1412,7 +1550,9 @@ input[type="password"] {
     }
 
     .estado-etiqueta {
-        align-self: flex-start; /* Evita que la etiqueta ocupe todo el ancho en el celular */
+        margin-left: 0 !important; /* Quitamos el margen lateral que empujaba el texto */
+        align-self: flex-start;
+        width: fit-content; /* Se ajusta exactamente al tamaño del texto */
     }
 
     /* --- Ajustes para Resultados de Evaluación en celular --- */
@@ -1495,6 +1635,17 @@ input[type="password"] {
     }
 
     .botones-perfil {
+        flex-direction: column;
+    }
+
+    /* --- Ajustes para Gestión de Solicitudes en celular --- */
+    .cabecera-solicitud-admin {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .botones-resolucion {
         flex-direction: column;
     }
 }

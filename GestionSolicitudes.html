@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Rhino</title>
+    <title>Gestión de solicitudes - Rhino</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -43,6 +43,173 @@
     </header>
 
     <main class="contenido-pagina">
+        <div class="contenedor-gestion-solicitudes">
+
+            <h1 class="titulo-seccion">Gestión de Solicitudes del Personal</h1>
+
+            <!-- SECCIÓN 1: NUEVAS SOLICITUDES -->
+            <h2 class="subtitulo-seccion">Nuevas Solicitudes</h2>
+            <div class="lista-solicitudes">
+
+                <!-- Solicitud 1 -->
+                <div class="tarjeta-solicitud">
+                    <div class="cabecera-solicitud-admin">
+                        <div class="info-resumen-admin">
+                            <h3>Solicitud de día de descanso (Vacaciones)</h3>
+                            <p class="datos-empleado-admin"><strong>Carlos Ramírez</strong> | 02 de Julio de 2026</p>
+                        </div>
+                        <button class="btn-desplegar" onclick="toggleSolicitud('sol-nueva-1')">Ver detalles ▼</button>
+                    </div>
+
+                    <div id="sol-nueva-1" class="contenido-solicitud oculto">
+                        <p class="detalle-texto-admin">Solicito mis 15 días de vacaciones reglamentarias correspondientes a este año laborado, a partir de la primera semana del próximo mes.</p>
+                        <p class="anexos-admin"><strong>Anexos:</strong> <a href="#">Formulario_Vacaciones_CR.pdf</a></p>
+
+                        <div class="botones-resolucion">
+                            <button class="btn-aprobar" onclick="abrirModalResolucion('Aprobar', 'Carlos Ramírez')">Aprobar</button>
+                            <button class="btn-pendiente" onclick="abrirModalResolucion('Pendiente', 'Carlos Ramírez')">Pendiente</button>
+                            <button class="btn-rechazar" onclick="abrirModalResolucion('Rechazar', 'Carlos Ramírez')">Rechazar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solicitud 2 -->
+                <div class="tarjeta-solicitud">
+                    <div class="cabecera-solicitud-admin">
+                        <div class="info-resumen-admin">
+                            <h3>Solicitud de aumento</h3>
+                            <p class="datos-empleado-admin"><strong>Laura Gómez</strong> | 01 de Julio de 2026</p>
+                        </div>
+                        <button class="btn-desplegar" onclick="toggleSolicitud('sol-nueva-2')">Ver detalles ▼</button>
+                    </div>
+
+                    <div id="sol-nueva-2" class="contenido-solicitud oculto">
+                        <p class="detalle-texto-admin">De acuerdo a mi evaluación de desempeño reciente y a las nuevas responsabilidades adquiridas en el proyecto Rhino, solicito formalmente una revisión salarial.</p>
+                        <p class="anexos-admin"><strong>Anexos:</strong> <a href="#">Reporte_Metricas_LG.pdf</a>, <a href="#">Carta_Solicitud.docx</a></p>
+
+                        <div class="botones-resolucion">
+                            <button class="btn-aprobar" onclick="abrirModalResolucion('Aprobar', 'Laura Gómez')">Aprobar</button>
+                            <button class="btn-pendiente" onclick="abrirModalResolucion('Pendiente', 'Laura Gómez')">Pendiente</button>
+                            <button class="btn-rechazar" onclick="abrirModalResolucion('Rechazar', 'Laura Gómez')">Rechazar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECCIÓN 2: SOLICITUDES EN REVISIÓN (PENDIENTES) -->
+            <h2 class="subtitulo-seccion">En Revisión (Pendientes)</h2>
+            <div class="lista-solicitudes">
+
+                <!-- Solicitud Pendiente 1 -->
+                <div class="tarjeta-solicitud estado-borde-pendiente">
+                    <div class="cabecera-solicitud-admin">
+                        <div class="info-resumen-admin">
+                            <h3>Solicitud de cambio de horario</h3>
+                            <p class="datos-empleado-admin"><strong>Mateo Vargas</strong> | 28 de Junio de 2026 <span class="estado-etiqueta estado-revision" style="margin-left: 10px;">En revisión</span></p>
+                        </div>
+                        <button class="btn-desplegar" onclick="toggleSolicitud('sol-pend-1')">Ver detalles ▼</button>
+                    </div>
+
+                    <div id="sol-pend-1" class="contenido-solicitud oculto">
+                        <p class="detalle-texto-admin">Solicito cambiar mi turno de la tarde a la mañana por motivos de estudio durante el próximo semestre.</p>
+                        <p class="anexos-admin"><strong>Anexos:</strong> <a href="#">Horario_Universidad.pdf</a></p>
+
+                        <div class="caja-motivo-resolucion">
+                            <h4>Motivo del estado pendiente (Supervisor):</h4>
+                            <p>Estamos validando la disponibilidad de cupos en el turno de la mañana. Se dará respuesta la próxima semana.</p>
+                            <p><strong>Anexo adjunto:</strong> <a href="#">Matriz_Turnos_Borrador.xlsx</a></p>
+                        </div>
+
+                        <div class="botones-resolucion">
+                            <button class="btn-aprobar" onclick="abrirModalResolucion('Aprobar', 'Mateo Vargas')">Aprobar</button>
+                            <!-- No hay botón de pendiente porque ya está pendiente -->
+                            <button class="btn-rechazar" onclick="abrirModalResolucion('Rechazar', 'Mateo Vargas')">Rechazar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECCIÓN 3: HISTORIAL (APROBADAS Y RECHAZADAS) -->
+            <h2 class="subtitulo-seccion">Historial Resuelto</h2>
+            <div class="lista-solicitudes">
+
+                <!-- Solicitud Aprobada -->
+                <div class="tarjeta-solicitud estado-borde-aprobada">
+                    <div class="cabecera-solicitud-admin">
+                        <div class="info-resumen-admin">
+                            <h3>Solicitud de horas extra</h3>
+                            <p class="datos-empleado-admin"><strong>Andrea Castro</strong> | 25 de Junio de 2026 <span class="estado-etiqueta estado-aprobada" style="margin-left: 10px;">Aprobada</span></p>
+                        </div>
+                        <button class="btn-desplegar" onclick="toggleSolicitud('sol-res-1')">Ver detalles ▼</button>
+                    </div>
+
+                    <div id="sol-res-1" class="contenido-solicitud oculto">
+                        <p class="detalle-texto-admin">Autorización para realizar 6 horas extra este fin de semana.</p>
+                        <p class="anexos-admin"><strong>Anexos:</strong> Ninguno</p>
+
+                        <div class="caja-motivo-resolucion aprobada-bg">
+                            <h4>Resolución (Aprobada):</h4>
+                            <p>Horas aprobadas para el despliegue del servidor. Por favor registrar el inicio y fin en el sistema.</p>
+                        </div>
+                        <!-- Sin botones de acción -->
+                    </div>
+                </div>
+
+                <!-- Solicitud Rechazada -->
+                <div class="tarjeta-solicitud estado-borde-rechazada">
+                    <div class="cabecera-solicitud-admin">
+                        <div class="info-resumen-admin">
+                            <h3>Solicitud de día de descanso (Justificado)</h3>
+                            <p class="datos-empleado-admin"><strong>Felipe Martínez</strong> | 20 de Junio de 2026 <span class="estado-etiqueta estado-rechazada" style="margin-left: 10px;">Rechazada</span></p>
+                        </div>
+                        <button class="btn-desplegar" onclick="toggleSolicitud('sol-res-2')">Ver detalles ▼</button>
+                    </div>
+
+                    <div id="sol-res-2" class="contenido-solicitud oculto">
+                        <p class="detalle-texto-admin">Solicito el viernes libre por calamidad doméstica.</p>
+                        <p class="anexos-admin"><strong>Anexos:</strong> Ninguno</p>
+
+                        <div class="caja-motivo-resolucion rechazada-bg">
+                            <h4>Resolución (Rechazada):</h4>
+                            <p>No se adjuntó el soporte documental requerido por recursos humanos para validar la calamidad. Por favor generar una nueva solicitud con los soportes.</p>
+                            <p><strong>Anexo adjunto:</strong> <a href="#">Manual_Permisos_Rhino.pdf</a></p>
+                        </div>
+                        <!-- Sin botones de acción -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MODAL DE RESOLUCIÓN (Oculto por defecto) -->
+        <div id="modal-resolucion" class="fondo-modal oculto">
+            <div class="tarjeta-modal">
+
+                <h2 id="titulo-modal-resolucion" class="titulo-modal">Resolver Solicitud</h2>
+                <p id="texto-candidato-resolucion" class="subtitulo-modal">Empleado: <strong>Nombre</strong></p>
+
+                <form class="formulario-modal">
+                    <div class="grupo-input">
+                        <label>Justificación de la decisión:</label>
+                        <textarea class="input-brutalista area-texto" style="min-height: 120px;" placeholder="Escriba los motivos de la aprobación, rechazo o por qué queda en estado pendiente..."></textarea>
+                    </div>
+                    <div class="grupo-input">
+                        <label>Anexar archivo (Opcional):</label>
+                        <input type="file" class="input-brutalista" multiple accept=".pdf,.doc,.docx,.jpg,.png,.zip">
+                    </div>
+                </form>
+
+                <div class="botones-modal">
+                    <button type="button" class="btn-cancelar" onclick="cerrarModalResolucion()">Cancelar</button>
+                    <button type="button" id="btn-confirmar-resolucion" class="btn-accion-principal">Confirmar Decisión</button>
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
     <script src="script.js"></script>

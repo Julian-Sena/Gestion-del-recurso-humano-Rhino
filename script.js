@@ -197,6 +197,52 @@ function eliminarEmpleado() {
     }
 }
 
+// ================= LÓGICA PARA GESTIÓN DE SOLICITUDES =================
+
+// Función para desplegar u ocultar el contenido de la solicitud
+function toggleSolicitud(idContenido) {
+    const contenido = document.getElementById(idContenido);
+    if (contenido.classList.contains('oculto')) {
+        contenido.classList.remove('oculto');
+    } else {
+        contenido.classList.add('oculto');
+    }
+}
+
+// Función para abrir el modal de resolución (Aprobar, Pendiente, Rechazar)
+function abrirModalResolucion(accion, nombreEmpleado) {
+    const modal = document.getElementById('modal-resolucion');
+    const titulo = document.getElementById('titulo-modal-resolucion');
+    const subtitulo = document.getElementById('texto-candidato-resolucion');
+    const btnConfirmar = document.getElementById('btn-confirmar-resolucion');
+
+    // Configurar textos
+    titulo.textContent = `${accion} Solicitud`;
+    subtitulo.innerHTML = `Empleado: <strong>${nombreEmpleado}</strong>`;
+
+    // Cambiar el color del botón de confirmar en el modal según la acción
+    btnConfirmar.className = 'btn-accion-principal'; // Resetear clase base
+
+    if (accion === 'Aprobar') {
+        btnConfirmar.style.backgroundColor = '#03923e'; // Verde
+        btnConfirmar.style.color = '#FFFFFF';
+    } else if (accion === 'Rechazar') {
+        btnConfirmar.style.backgroundColor = '#D32F2F'; // Rojo
+        btnConfirmar.style.color = '#FFFFFF';
+    } else if (accion === 'Pendiente') {
+        btnConfirmar.style.backgroundColor = '#F1C40F'; // Amarillo
+        btnConfirmar.style.color = '#000000';
+    }
+
+    // Mostrar modal
+    modal.classList.remove('oculto');
+}
+
+function cerrarModalResolucion() {
+    document.getElementById('modal-resolucion').classList.add('oculto');
+}
+
+
 // ================= LÓGICA DEL MENÚ SUPERIOR (Principal.html y futuras páginas) =================
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -71,6 +71,13 @@
                     <textarea id="detalle-solicitud" class="input-brutalista area-texto" maxlength="1000" placeholder="Escriba aquí los motivos o detalles de su solicitud..."></textarea>
                 </div>
 
+                <!-- NUEVO CAMPO: ANEXOS -->
+                <div class="grupo-input">
+                    <label for="anexos-solicitud">Documentos anexos (Opcional):</label>
+                    <!-- Permite múltiples archivos y restringe a formatos comunes de oficina -->
+                    <input type="file" id="anexos-solicitud" class="input-brutalista" multiple accept=".pdf,.doc,.docx,.jpg,.png,.zip">
+                </div>
+
                 <!-- Un botón del tipo "button" para que no recargue la página en nuestra maqueta -->
                 <button type="button" class="btn-enviar-solicitud">Radicar solicitud</button>
 
