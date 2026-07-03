@@ -36,7 +36,8 @@ El sistema digital contempla las siguientes funcionalidades divididas por módul
  * **Configuración de criterios:** Creación de parámetros personalizados basados en la organización (puntualidad, cumplimiento, responsabilidad, actitud).
  * **Resultados:** Consolidación digital de los resultados de desempeño e informes detallados.
  * **Reporte de incidencias:** Registro y almacenamiento de fallas o errores cometidos por los colaboradores para el seguimiento de planes de mejora.
- 
+ <img width="973" height="650" alt="image" src="https://github.com/user-attachments/assets/9edfcd31-d99b-433b-a9ec-0723b110e5a8" />
+
 ## Especificaciones Técnicas y de Calidad
 El sistema ha sido estructurado bajo los estándares de las normas de calidad de software ISO/IEC/IEEE 29148:2018 para los requisitos funcionales, e ISO/IEC 25010 (2022/2023) para los siguientes criterios no funcionales:
  * **Disponibilidad:** Operación garantizada con un mínimo del 99% del tiempo disponible durante el horario laboral.
