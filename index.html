@@ -35,6 +35,8 @@
                     <input type="text" id="input-user-empleado" placeholder="Usuario">
                     <input type="password" id="input-pass-empleado" placeholder="Contraseña">
                     <button class="btn-login" onclick="validarLogin('empleado')">Iniciar sesión</button>
+
+
                     <p id="error-empleado" class="mensaje-error"></p>
                 </div>
 
@@ -63,8 +65,39 @@
                 </div>
             </div>
 
-            <a href="https://rhinosas.com.co" class="link-quienes-somos">¿Quienes somos?</a>
+    <!-- NUEVOS BOTONES DE ACCIÓN DE CONTRASEÑA -->
+            <!-- LOS BOTONES DEBEN ESTAR JUNTOS -->
+            <div class="contenedor-acciones-extra">
+                <button class="tab-btn" onclick="abrirModal('modal-recuperar')">Olvidé mi contraseña</button><button class="tab-btn" onclick="abrirModal('modal-cambiar')">Cambiar contraseña</button>
+            </div>
 
+            <a href="https://rhinosas.com.co" class="link-quienes-somos">¿Quienes somos?</a>
+        </div>
+    </div>
+
+    <!-- MODALES (Ocultos por defecto) -->
+    <div id="modal-recuperar" class="fondo-modal oculto">
+        <div class="tarjeta-modal">
+            <h2>Recuperar Contraseña</h2>
+            <input type="email" class="input-brutalista" placeholder="Ingrese su correo electrónico">
+            <div class="botones-modal">
+                <button class="btn-cancelar" onclick="cerrarModal('modal-recuperar')">Cancelar</button>
+                <button class="btn-login" style="width: 100%;">Enviar Correo</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-cambiar" class="fondo-modal oculto">
+        <div class="tarjeta-modal">
+            <h2>Cambiar Contraseña</h2>
+            <input type="email" class="input-brutalista" placeholder="Correo electrónico">
+            <input type="password" class="input-brutalista" placeholder="Contraseña actual">
+            <input type="password" class="input-brutalista" placeholder="Nueva contraseña">
+            <input type="password" class="input-brutalista" placeholder="Confirmar nueva contraseña">
+            <div class="botones-modal">
+                <button class="btn-cancelar" onclick="cerrarModal('modal-cambiar')">Cancelar</button>
+                <button class="btn-login" style="width: 100%;">Actualizar</button>
+            </div>
         </div>
     </div>
 

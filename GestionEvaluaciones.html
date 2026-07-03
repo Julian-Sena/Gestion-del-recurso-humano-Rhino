@@ -43,6 +43,129 @@
     </header>
 
     <main class="contenido-pagina">
+
+        <div class="contenedor-gestion-evaluaciones">
+
+            <h1 class="titulo-seccion">Configuración de Criterios de Evaluación</h1>
+
+            <!-- BUSCADOR -->
+            <div class="tarjeta-busqueda">
+                <input type="text" id="buscador-evaluacion" class="input-brutalista" placeholder="Buscar empleado por documento (Ej: 1111111111)">
+                <button class="btn-buscar" onclick="buscarParaEvaluacion()">Buscar Personal</button>
+            </div>
+
+            <!-- RESULTADO DEL EMPLEADO Y SUS CRITERIOS (Oculto por defecto) -->
+            <div id="panel-evaluacion" class="oculto">
+
+                <!-- Perfil Básico -->
+                <div class="tarjeta-perfil-basico">
+                    <img id="eval-foto" src="" alt="Foto Empleado" class="foto-perfil-mediana">
+                    <div class="datos-perfil-basico">
+                        <h2 id="eval-nombre">Nombre del Empleado</h2>
+                        <span id="eval-rol" class="etiqueta-rol">Rol del Empleado</span>
+                    </div>
+                </div>
+
+                <h2 class="subtitulo-seccion" style="margin-top: 30px;">Criterios de Evaluación Actuales</h2>
+
+                <!-- Cuadrícula de Criterios (Visualización) -->
+                <div class="grid-evaluaciones">
+
+                    <!-- 1. PUNTUALIDAD -->
+                    <div class="tarjeta-evaluacion">
+                        <div class="cabecera-categoria bg-azul">
+                            <h2>Puntualidad (30%)</h2>
+                        </div>
+                        <ul id="display-puntualidad" class="lista-criterios-texto">
+                            <!-- Se llena por JS -->
+                        </ul>
+                    </div>
+
+                    <!-- 2. CALIDAD -->
+                    <div class="tarjeta-evaluacion">
+                        <div class="cabecera-categoria bg-azul">
+                            <h2>Calidad (30%)</h2>
+                        </div>
+                        <ul id="display-calidad" class="lista-criterios-texto">
+                            <!-- Se llena por JS -->
+                        </ul>
+                    </div>
+
+                    <!-- 3. COLABORACIÓN -->
+                    <div class="tarjeta-evaluacion">
+                        <div class="cabecera-categoria bg-azul">
+                            <h2>Colaboración (15%)</h2>
+                        </div>
+                        <ul id="display-colaboracion" class="lista-criterios-texto">
+                            <!-- Se llena por JS -->
+                        </ul>
+                    </div>
+
+                    <!-- 4. CUMPLIMIENTO -->
+                    <div class="tarjeta-evaluacion">
+                        <div class="cabecera-categoria bg-azul">
+                            <h2>Cumplimiento (25%)</h2>
+                        </div>
+                        <ul id="display-cumplimiento" class="lista-criterios-texto">
+                            <!-- Se llena por JS -->
+                        </ul>
+                    </div>
+
+                </div>
+
+                <button class="btn-editar-grande" onclick="abrirModalCriterios()">Editar Criterios de Evaluación</button>
+
+            </div>
+
+        </div>
+
+        <!-- MODAL PARA EDITAR CRITERIOS (Oculto por defecto) -->
+        <div id="modal-criterios" class="fondo-modal oculto">
+            <div class="tarjeta-modal modal-scrollable">
+
+                <h2 class="titulo-modal">Editar Criterios de Evaluación</h2>
+                <p class="subtitulo-modal">Modificando criterios para: <strong id="modal-nombre-empleado"></strong></p>
+
+                <div class="contenedor-edicion-categorias">
+
+                    <!-- Edición Puntualidad -->
+                    <div class="seccion-edicion-cat">
+                        <h3 class="titulo-cat-edit">Puntualidad</h3>
+                        <div id="edit-puntualidad" class="lista-inputs-criterios"></div>
+                        <button class="btn-agregar-criterio" onclick="agregarCriterioInput('edit-puntualidad')">+ Añadir Criterio</button>
+                    </div>
+
+                    <!-- Edición Calidad -->
+                    <div class="seccion-edicion-cat">
+                        <h3 class="titulo-cat-edit">Calidad</h3>
+                        <div id="edit-calidad" class="lista-inputs-criterios"></div>
+                        <button class="btn-agregar-criterio" onclick="agregarCriterioInput('edit-calidad')">+ Añadir Criterio</button>
+                    </div>
+
+                    <!-- Edición Colaboración -->
+                    <div class="seccion-edicion-cat">
+                        <h3 class="titulo-cat-edit">Colaboración</h3>
+                        <div id="edit-colaboracion" class="lista-inputs-criterios"></div>
+                        <button class="btn-agregar-criterio" onclick="agregarCriterioInput('edit-colaboracion')">+ Añadir Criterio</button>
+                    </div>
+
+                    <!-- Edición Cumplimiento -->
+                    <div class="seccion-edicion-cat">
+                        <h3 class="titulo-cat-edit">Cumplimiento</h3>
+                        <div id="edit-cumplimiento" class="lista-inputs-criterios"></div>
+                        <button class="btn-agregar-criterio" onclick="agregarCriterioInput('edit-cumplimiento')">+ Añadir Criterio</button>
+                    </div>
+
+                </div>
+
+                <div class="botones-modal" style="margin-top: 25px;">
+                    <button type="button" class="btn-cancelar" onclick="cerrarModalCriterios()">Cancelar</button>
+                    <button type="button" class="btn-accion-principal" onclick="guardarCriterios()">Guardar Cambios</button>
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
     <script src="script.js"></script>

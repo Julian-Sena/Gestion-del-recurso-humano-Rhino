@@ -1447,6 +1447,196 @@ input[type="password"] {
 .btn-rechazar { background-color: #D32F2F; color: #FFFFFF; }
 .btn-rechazar:hover { background-color: #9A0007; }
 
+/* ================= 12. ESTILOS PARA GESTIÓN DE EVALUACIONES ================= */
+
+.contenedor-gestion-evaluaciones {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- PERFIL BÁSICO --- */
+.tarjeta-perfil-basico {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background-color: #f2f2f2;
+    border: 6px solid #000000;
+    padding: 25px;
+    box-shadow: 6px 6px 0px rgba(0,0,0,1);
+    margin-top: 20px;
+}
+
+.foto-perfil-mediana {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 4px solid #000000;
+    background-color: #FFFFFF;
+}
+
+.datos-perfil-basico h2 {
+    font-size: 1.8rem;
+    color: #29166f;
+    margin-bottom: 10px;
+}
+
+.etiqueta-rol {
+    background-color: #F1C40F;
+    color: #000000;
+    padding: 5px 15px;
+    border: 3px solid #000000;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- VISUALIZACIÓN DE CRITERIOS --- */
+.bg-azul {
+    background-color: #29166f !important;
+    color: #FFFFFF !important;
+}
+
+.lista-criterios-texto {
+    list-style-type: square;
+    padding: 20px 20px 20px 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.btn-editar-grande {
+    width: 100%;
+    background-color: #F1C40F;
+    color: #000000;
+    border: 6px solid #000000;
+    box-shadow: 6px 6px 0px rgba(0,0,0,1);
+    padding: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-editar-grande:hover {
+    background-color: #d4ac0d;
+    transform: translateY(-5px);
+}
+
+/* --- MODAL DE EDICIÓN --- */
+.modal-scrollable {
+    max-height: 90vh; /* Para que no se salga de la pantalla si hay muchos criterios */
+    overflow-y: auto;
+    max-width: 700px;
+}
+
+.contenedor-edicion-categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.seccion-edicion-cat {
+    background-color: #f2f2f2;
+    border: 4px solid #000000;
+    padding: 20px;
+}
+
+.titulo-cat-edit {
+    color: #29166f;
+    border-bottom: 3px solid #000000;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.lista-inputs-criterios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-criterio-edit {
+    display: flex;
+    gap: 10px;
+}
+
+.item-criterio-edit input {
+    flex-grow: 1;
+}
+
+.btn-eliminar-criterio {
+    background-color: #D32F2F;
+    color: #FFFFFF;
+    border: 3px solid #000000;
+    font-weight: bold;
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.btn-eliminar-criterio:hover {
+    background-color: #9A0007;
+}
+
+.btn-agregar-criterio {
+    background-color: #03923e;
+    color: #FFFFFF;
+    border: 3px solid #000000;
+    padding: 8px 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.btn-agregar-criterio:hover {
+    background-color: #1B4F35;
+}
+
+/* --- CORRECCIONES VISUALES PARA GESTIÓN DE EVALUACIONES --- */
+
+/* 1. Separación del título "Criterios de Evaluación Actuales" con la cuadrícula */
+#panel-evaluacion .subtitulo-seccion {
+    margin-bottom: 25px;
+}
+
+/* 2. Forzar el color blanco en los títulos h2 que están dentro de las cajas azules */
+.bg-azul h2 {
+    color: #FFFFFF !important;
+}
+
+
+/* --- ACCIONES EXTRA SIN SEPARACIÓN --- */
+.contenedor-acciones-extra {
+    display: flex;
+    justify-content: center;
+    margin-top: -6px; /* Elimina la separación vertical con la tarjeta superior */
+}
+
+.contenedor-acciones-extra .tab-btn {
+    flex: 1; /* Hace que ambos ocupen el mismo espacio */
+    margin: 0;
+    border-radius: 0; /* Asegura que los bordes sean rectos y se toquen */
+    border: 6px solid #000000;
+}
+
+/* El segundo botón debe tener margen negativo para solapar el borde del primero */
+.contenedor-acciones-extra .tab-btn:nth-child(2) {
+    margin-left: -6px;
+}
+
+/* Aseguramos que los inputs dentro de modales tengan estilo */
+.tarjeta-modal .input-brutalista {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+}
+
 /* ================= 3. DISEÑO RESPONSIVE GLOBAL (TABLETS Y CELULARES) ================= */
 
 @media (max-width: 1024px) {
@@ -1457,6 +1647,11 @@ input[type="password"] {
 }
 
 @media (max-width: 768px) {
+
+     .tarjeta-perfil-basico {
+        flex-direction: column;
+        text-align: center;
+    }
     /* --- Ajustes para el Login (index.html) --- */
     .contenedor-principal {
         flex-direction: column;

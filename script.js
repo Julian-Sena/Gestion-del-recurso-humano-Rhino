@@ -242,6 +242,181 @@ function cerrarModalResolucion() {
     document.getElementById('modal-resolucion').classList.add('oculto');
 }
 
+// ================= LÓGICA PARA GESTIÓN DE EVALUACIONES (GERENTE) =================
+
+// Base de datos específica para evaluaciones con roles variados
+const bdEvaluaciones = {
+    "1111111111": { nombre: "Carlos Ramírez", rol: "Desarrollador Backend", foto: "Pos1.png",
+        criterios: {
+            puntualidad: ["Hora de llegada", "Tiempo de culminación de tareas"],
+            calidad: ["Precisión en entregables", "Atención al detalle"],
+            colaboracion: ["Trabajo en equipo", "Comunicación asertiva"],
+            cumplimiento: ["Seguimiento de normativas", "Asistencia a reuniones"]
+        }
+    },
+    "2222222222": { nombre: "Laura Gómez", rol: "Asistente Contable", foto: "Pos2.png",
+        criterios: {
+            puntualidad: ["Hora de llegada", "Entrega de balances a tiempo"],
+            calidad: ["Cero errores en digitación", "Organización de facturas"],
+            colaboracion: ["Disposición para auditorías", "Comunicación asertiva"],
+            cumplimiento: ["Uso correcto del software contable", "Asistencia a reuniones"]
+        }
+    },
+    "3333333333": { nombre: "Mateo Vargas", rol: "Personal de Aseo", foto: "Pos3.png",
+        criterios: {
+            puntualidad: ["Hora de llegada", "Cumplimiento de rondas diarias"],
+            calidad: ["Limpieza de áreas comunes", "Manejo adecuado de insumos"],
+            colaboracion: ["Trabajo en equipo", "Reporte de daños a mantenimiento"],
+            cumplimiento: ["Uso de dotación y EPP", "Seguimiento de normativas"]
+        }
+    },
+    "4444444444": { nombre: "Andrea Castro", rol: "Coordinadora de Transporte", foto: "Pos4.png",
+        criterios: {
+            puntualidad: ["Hora de llegada", "Despacho de vehículos a tiempo"],
+            calidad: ["Optimización de rutas", "Control de combustible"],
+            colaboracion: ["Comunicación con conductores", "Atención a proveedores"],
+            cumplimiento: ["Revisión de documentos vehiculares", "Reporte de siniestros"]
+        }
+    },
+    "5555555555": { nombre: "Felipe Martínez", rol: "Diseñador UX/UI", foto: "Pos5.png",
+        criterios: {
+            puntualidad: ["Hora de llegada", "Tiempo de culminación de prototipos"],
+            calidad: ["Innovación visual", "Atención al detalle en interfaces"],
+            colaboracion: ["Recepción de feedback", "Colaboración con desarrolladores"],
+            cumplimiento: ["Seguimiento de guías de marca", "Asistencia a dailys"]
+        }
+    },
+    "6666666666": { nombre: "Valentina Ruiz", rol: "Ingeniera de Requisitos", foto: "Pos6.png",
+        criterios: {
+            puntualidad: ["Hora de llegada", "Entrega de documentación"],
+            calidad: ["Claridad en historias de usuario", "Precisión en levantamiento de datos"],
+            colaboracion: ["Comunicación con el cliente", "Apoyo al equipo técnico"],
+            cumplimiento: ["Uso de estándares UML", "Asistencia a reuniones"]
+        }
+    }
+};
+
+let empleadoActualEval = null;
+
+function buscarParaEvaluacion() {
+    const doc = document.getElementById('buscador-evaluacion').value;
+    const empleado = bdEvaluaciones[doc];
+
+    if (empleado) {
+        empleadoActualEval = empleado;
+
+        // Llenar datos básicos
+        document.getElementById('eval-foto').src = empleado.foto;
+        document.getElementById('eval-nombre').textContent = empleado.nombre;
+        document.getElementById('eval-rol').textContent = empleado.rol;
+
+        // Renderizar listas de criterios en la vista
+        renderizarListaCriterios('display-puntualidad', empleado.criterios.puntualidad);
+        renderizarListaCriterios('display-calidad', empleado.criterios.calidad);
+        renderizarListaCriterios('display-colaboracion', empleado.criterios.colaboracion);
+        renderizarListaCriterios('display-cumplimiento', empleado.criterios.cumplimiento);
+
+        document.getElementById('panel-evaluacion').classList.remove('oculto');
+    } else {
+        alert("Empleado no encontrado.");
+        document.getElementById('panel-evaluacion').classList.add('oculto');
+    }
+}
+
+function renderizarListaCriterios(idContenedor, arrayCriterios) {
+    const ul = document.getElementById(idContenedor);
+    ul.innerHTML = "";
+    arrayCriterios.forEach(crit => {
+        ul.innerHTML += `<li>${crit}</li>`;
+    });
+}
+
+function abrirModalCriterios() {
+    document.getElementById('modal-nombre-empleado').textContent = empleadoActualEval.nombre;
+
+    // Cargar los inputs en el modal
+    cargarInputsEdicion('edit-puntualidad', empleadoActualEval.criterios.puntualidad);
+    cargarInputsEdicion('edit-calidad', empleadoActualEval.criterios.calidad);
+    cargarInputsEdicion('edit-colaboracion', empleadoActualEval.criterios.colaboracion);
+    cargarInputsEdicion('edit-cumplimiento', empleadoActualEval.criterios.cumplimiento);
+
+    document.getElementById('modal-criterios').classList.remove('oculto');
+}
+
+function cerrarModalCriterios() {
+    document.getElementById('modal-criterios').classList.add('oculto');
+}
+
+function cargarInputsEdicion(idContenedor, arrayCriterios) {
+    const contenedor = document.getElementById(idContenedor);
+    contenedor.innerHTML = "";
+    arrayCriterios.forEach(crit => {
+        agregarCriterioInput(idContenedor, crit);
+    });
+}
+
+// Función para agregar una fila de input para un criterio
+function agregarCriterioInput(idContenedor, valor = "") {
+    const contenedor = document.getElementById(idContenedor);
+    const div = document.createElement('div');
+    div.className = 'item-criterio-edit';
+
+    div.innerHTML = `
+        <input type="text" class="input-brutalista" value="${valor}" placeholder="Escriba el criterio...">
+        <button class="btn-eliminar-criterio" onclick="eliminarCriterioInput(this, '${idContenedor}')">X</button>
+    `;
+    contenedor.appendChild(div);
+}
+
+// Función para eliminar asegurando que siempre quede 1 mínimo
+function eliminarCriterioInput(btn, idContenedor) {
+    const contenedor = document.getElementById(idContenedor);
+    if (contenedor.children.length > 1) {
+        contenedor.removeChild(btn.parentElement);
+    } else {
+        alert("Atención: Debe existir al menos un (1) criterio de evaluación para esta categoría.");
+    }
+}
+
+// Función para guardar los cambios y actualizar la vista
+function guardarCriterios() {
+    // Recolectar valores de los inputs
+    empleadoActualEval.criterios.puntualidad = extraerValoresInputs('edit-puntualidad');
+    empleadoActualEval.criterios.calidad = extraerValoresInputs('edit-calidad');
+    empleadoActualEval.criterios.colaboracion = extraerValoresInputs('edit-colaboracion');
+    empleadoActualEval.criterios.cumplimiento = extraerValoresInputs('edit-cumplimiento');
+
+    // Refrescar la vista principal
+    renderizarListaCriterios('display-puntualidad', empleadoActualEval.criterios.puntualidad);
+    renderizarListaCriterios('display-calidad', empleadoActualEval.criterios.calidad);
+    renderizarListaCriterios('display-colaboracion', empleadoActualEval.criterios.colaboracion);
+    renderizarListaCriterios('display-cumplimiento', empleadoActualEval.criterios.cumplimiento);
+
+    cerrarModalCriterios();
+    alert("Criterios de evaluación actualizados exitosamente en el sistema.");
+}
+
+function extraerValoresInputs(idContenedor) {
+    const inputs = document.getElementById(idContenedor).querySelectorAll('input');
+    const valores = [];
+    inputs.forEach(input => {
+        if(input.value.trim() !== "") {
+            valores.push(input.value.trim());
+        }
+    });
+    // Fallback de seguridad en caso de que borren el texto del único input
+    if (valores.length === 0) valores.push("Criterio general");
+    return valores;
+}
+
+// Funciones para los modales de contraseña
+function abrirModal(id) {
+    document.getElementById(id).classList.remove('oculto');
+}
+
+function cerrarModal(id) {
+    document.getElementById(id).classList.add('oculto');
+}
 
 // ================= LÓGICA DEL MENÚ SUPERIOR (Principal.html y futuras páginas) =================
 
