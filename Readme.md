@@ -1,59 +1,42 @@
-Proyecto de Gestión de Recursos Humanos - RHINO S.A.S.
-Sistema de información web centralizado diseñado para automatizar la administración de los colaboradores operativos de mantenimiento y aseo, sustituyendo los métodos tradicionales y manuales por una solución digital transparente y basada en datos.
+Aquí tienes una propuesta de archivo `README.md` estructurada para el proyecto **"Gestión del Recurso Humano - Rhino"**, basada en la información del documento (SENA, Rhino Soluciones Integrales S.A.S.) y organizada bajo una simulación lógica de **8 commits** ordenados cronológicamente mediante una tabla scannable.
 
-Despliegue del Prototipo: Ver Aplicación en Vivo (GitHub Pages)
+---
 
-## Autores
-Cristian Oliveros
+# # Gestión del Recurso Humano - Rhino Soluciones Integrales S.A.S.
 
--Julián Hernández
--Miguel Rojas
--Andres Martinez
+## ## Historial de Commits del Proyecto
 
-Programa: Análisis y Desarrollo de Software
+A continuación se detalla la evolución del desarrollo del sistema digital para la administración y control del talento humano de la sede Bogotá (Alcalá):
 
-Entidad: Soluciones Integrales LTDA / Centro de Electricidad, Electrónica y Telecomunicaciones - SENA
+| Commit | Mensaje de Commit (Descripción) | Módulo / Componente Afectado | Detalles de la Implementación
 
-## Descripción del Proyecto
-El proyecto presenta el diseño y la estructura modular de un sistema web orientado a centralizar la administración de los colaboradores en Rhino Soluciones Integrales S.A.S. Su enfoque principal radica en estandarizar los flujos de información y asegurar la trazabilidad de jornadas, solicitudes laborales y el rendimiento del personal operativo bajo normativas de calidad técnica.
 
-Esta transformación digital elimina de forma definitiva las ineficiencias administrativas, optimizando el control operativo al reducir los tiempos de respuesta y asegurar la integridad de la información en toda la organización.
+| **1** | `feat: inicializar estructura y documentación base` | Raíz del proyecto | Creación del planteamiento del problema, objetivos generales y definición del alcance con el SENA.
 
-Metodología y Herramientas
-El estudio y desarrollo se enfocó específicamente en analizar y optimizar los procesos administrativos del personal operativo y de planta ubicado en la sede Alcalá de Bogotá de la empresa, bajo los siguientes componentes estratégicos:
 
-Estrategia General: Combinación de la metodología ágil Scrum con la investigación acción-participativa para identificar y recolectar las necesidades del sistema junto con el personal administrativo.
+|**2**| `feat: implementar módulo 1 de gestión de usuarios` | Módulo 1: Usuarios | Desarrollo de flujos de registro, inicio de sesión, consulta de cuentas y cierre de sesión con roles jerárquicos.
 
-## Procedimiento:
 
--Diagnóstico y recolección de formatos físicos.
+|**3**|  `feat: crear componentes para la gestión de horarios` | Módulo 2: Horarios | Implementación de asignación de turnos semanales, consulta de horas trabajadas y seguimiento a periodos de prueba.
 
--Priorización de los requerimientos clave del sistema.
 
--Diseño arquitectónico y desarrollo.
+| **4** | `feat: integrar submódulo de radicación de solicitudes` | Módulo 3: Solicitudes | Programación del buzón para horas extra, permisos, ausencias previas, solicitudes de aumento, ascensos y renuncias.
 
--Validación de prototipos mediante navegación modular por roles.
 
--Materiales e Instrumentos:
+| **5** | `feat: añadir sistema lineal de evaluación de desempeño` | Módulo 4: Evaluaciones | Tabulación analítica de criterios (puntualidad, cumplimiento, calidad) en escala del 1 al 10 y reportes de incidencias.
 
--Matrices de requisitos funcionales bajo el estándar de calidad ISO/IEC 25010.
+ 
+| **6** | `feat: estructurar el listado general de administración` | Módulo 5: Personal | Creación del repositorio documental centralizado, asignación de cargos, áreas y alta de nuevos colaboradores en tiempo real.
 
--Herramientas de Figma para el diseño de interfaces UI/UX.
+ 
+| **7** | `feat: agregar funcionalidad de selección y ofertas` | Módulo 5: Selección | Implementación del módulo para publicación de ofertas laborales y almacenamiento/clasificación de hojas de vida.
 
--Arquitecturas distribuidas para el desarrollo del backend y frontend.
 
--Análisis de Datos: Evaluación técnica enfocada en la persistencia de datos del sistema y análisis de usabilidad mediante pruebas directas con usuarios finales para comprobar la disminución de tiempos en las actividades.
+| **8** | `ui: acoplar prototipos finales figma y vistas de rol` | Interfaz de Usuario (UI) | Integración del Dashboard unificado con menú lateral responsivo y vistas segregadas (Empleado, Analista, Admin).
 
--Estructura Modular y Hallazgos Destacados
--El sistema divide su lógica en una solución estructurada que mitiga las vulnerabilidades de la gestión manual:
 
--Control de Horarios y Jornadas: Automatiza el seguimiento en tiempo real, eliminando la probabilidad de cruces, errores o traslape de turnos.
 
--Módulo de Radicación de Solicitudes: Erradica la informalidad en las solicitudes de personal (canales como WhatsApp o llamadas), centralizando los trámites en una plataforma formal.
-
--Evaluación del Desempeño: Profesionaliza la evaluación operativa mediante métricas automatizadas bajo escalas lineales (1-10) ponderadas en cuatro ejes fijos: Puntualidad (30%), Calidad (30%), Cumplimiento (25%) y Colaboración (15%).
-
--Persistencia Centralizada: Transiciona el almacenamiento desde carpetas físicas y nubes aisladas hacia una base de datos --centralizada y segura que garantiza la integridad de los datos.
-
-## Conclusiones y Escalabilidad
--Al responder plenamente a los requerimientos del entorno operativo, se concluye que la plataforma no solo humaniza el proceso tecnológico mediante un sistema de estados transparente en tiempo real para novedades y permisos, sino que impacta positivamente el clima laboral. Las implicaciones de este trabajo sientan las bases de una administración moderna, demostrando que el modelo es altamente escalable hacia otras sedes de la organización.
+> ###  Información General del Proyecto
+> * **Entidad:** Servicio Nacional de Aprendizaje (SENA).
+> * **Cliente Objetivo:** Rhino Soluciones Integrales S.A.S. (Sede Bogotá - Alcalá).
+> * **Objetivo Principal:** Reemplazar los flujos manuales y formatos físicos por una plataforma web centralizada bajo estándares de calidad de software que optimice el ciclo operativo de los colaboradores.
