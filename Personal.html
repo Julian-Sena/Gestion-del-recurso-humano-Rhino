@@ -42,6 +42,183 @@
     </header>
 
     <main class="contenido-pagina">
+
+        <div class="contenedor-personal">
+
+            <!-- SECCIÓN 1: BUSCADOR Y PERFIL -->
+            <h1 class="titulo-seccion">Consultar / Editar Personal</h1>
+
+            <div class="tarjeta-busqueda">
+                <input type="text" id="buscador-cedula" class="input-brutalista" placeholder="Buscar por documento (Ej: 1111111111)">
+                <button class="btn-buscar" onclick="buscarEmpleado()">Buscar</button>
+            </div>
+
+            <!-- Tarjeta de Perfil del Empleado (Oculta por defecto) -->
+            <div id="perfil-empleado" class="tarjeta-perfil oculto">
+
+                <div class="cabecera-perfil">
+                    <img id="perfil-foto-preview" src="" alt="Foto Empleado" class="foto-perfil-gigante">
+
+                    <!-- Estadísticas de horas (No editables) -->
+                    <div class="caja-horas">
+                        <h3>Horas Trabajadas (Mes Actual)</h3>
+                        <div class="grid-horas-perfil">
+                            <p>Normales: <strong id="perfil-h-normales">0</strong></p>
+                            <p>Extra: <strong id="perfil-h-extra">0</strong></p>
+                            <p>Rec. Nocturno: <strong id="perfil-h-nocturno">0</strong></p>
+                            <p>Extra Recargo: <strong id="perfil-h-extra-noc">0</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="form-edicion-perfil" class="formulario-perfil">
+
+                    <h3 class="subtitulo-interno">Datos Personales</h3>
+                    <div class="grid-2-columnas">
+                        <div class="grupo-input">
+                            <label>Nombres:</label>
+                            <input type="text" id="perfil-nombres" class="input-brutalista edit-field" disabled>
+                        </div>
+                        <div class="grupo-input">
+                            <label>Apellidos:</label>
+                            <input type="text" id="perfil-apellidos" class="input-brutalista edit-field" disabled>
+                        </div>
+                        <div class="grupo-input">
+                            <label>Tipo de Documento:</label>
+                            <select id="perfil-tipo-doc" class="input-brutalista edit-field" disabled>
+                                <option value="CC">Cédula de Ciudadanía (CC)</option>
+                                <option value="CE">Cédula de Extranjería (CE)</option>
+                                <option value="PAS">Pasaporte</option>
+                            </select>
+                        </div>
+                        <div class="grupo-input">
+                            <label>Número de Documento:</label>
+                            <input type="text" id="perfil-documento" class="input-brutalista edit-field" disabled>
+                        </div>
+                        <div class="grupo-input">
+                            <label>Fecha de Nacimiento:</label>
+                            <input type="date" id="perfil-nacimiento" class="input-brutalista edit-field" disabled>
+                        </div>
+                    </div>
+
+                    <h3 class="subtitulo-interno">Datos de Contacto</h3>
+                    <div class="grid-2-columnas">
+                        <div class="grupo-input">
+                            <label>Correo Electrónico:</label>
+                            <input type="email" id="perfil-correo" class="input-brutalista edit-field" disabled>
+                        </div>
+                        <div class="grupo-input">
+                            <label>Número de Teléfono:</label>
+                            <input type="text" id="perfil-telefono" class="input-brutalista edit-field" disabled>
+                        </div>
+                    </div>
+
+                    <h3 class="subtitulo-interno">Gestión Documental</h3>
+                    <div class="grid-2-columnas">
+                        <div class="grupo-input">
+                            <label>Actualizar Foto de Perfil:</label>
+                            <input type="file" class="input-brutalista edit-field" accept="image/*" disabled>
+                        </div>
+                        <div class="grupo-input">
+                            <label>Documento de Identidad (PDF):</label>
+                            <input type="file" class="input-brutalista edit-field" accept=".pdf" disabled>
+                        </div>
+                        <div class="grupo-input">
+                            <label>Certificaciones (PDF/ZIP):</label>
+                            <input type="file" class="input-brutalista edit-field" disabled>
+                        </div>
+                        <div class="grupo-input">
+                            <label>Hoja de Vida (Word/PDF):</label>
+                            <input type="file" class="input-brutalista edit-field" disabled>
+                        </div>
+
+                        <!-- NUEVO CAMPO: ANEXOS (Solo visible en consulta/edición) -->
+                        <div class="grupo-input">
+                            <label>Anexos (Incapacidades, actas, etc.):</label>
+                            <input type="file" class="input-brutalista edit-field" multiple disabled>
+                        </div>
+                    </div>
+
+                    <div class="botones-perfil">
+                        <!-- Botones de vista -->
+                        <button type="button" id="btn-habilitar-edicion" class="btn-editar" onclick="habilitarEdicion()">Editar Datos</button>
+                        <button type="button" id="btn-eliminar" class="btn-eliminar" onclick="eliminarEmpleado()">Eliminar Empleado</button>
+
+                        <!-- Botones de edición (Ocultos por defecto) -->
+                        <button type="button" id="btn-guardar-edicion" class="btn-guardar oculto" onclick="guardarEdicion()">Guardar Cambios</button>
+                        <button type="button" id="btn-cancelar-edicion" class="btn-cancelar oculto" onclick="cancelarEdicion()">Cancelar</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- SECCIÓN 2: AGREGAR NUEVO EMPLEADO -->
+            <h2 class="subtitulo-seccion">Registrar Nuevo Empleado</h2>
+            <div class="tarjeta-formulario">
+
+                <form>
+                    <div class="grid-2-columnas">
+                        <div class="grupo-input">
+                            <label>Nombres:</label>
+                            <input type="text" class="input-brutalista" placeholder="Ej: Juan Pablo">
+                        </div>
+                        <div class="grupo-input">
+                            <label>Apellidos:</label>
+                            <input type="text" class="input-brutalista" placeholder="Ej: Rodríguez">
+                        </div>
+                        <div class="grupo-input">
+                            <label>Tipo de Documento:</label>
+                            <select class="input-brutalista">
+                                <option value="CC">Cédula de Ciudadanía (CC)</option>
+                                <option value="CE">Cédula de Extranjería (CE)</option>
+                                <option value="PAS">Pasaporte</option>
+                            </select>
+                        </div>
+                        <div class="grupo-input">
+                            <label>Número de Documento:</label>
+                            <input type="text" class="input-brutalista" placeholder="Ej: 1020304050">
+                        </div>
+                        <div class="grupo-input">
+                            <label>Fecha de Nacimiento:</label>
+                            <input type="date" class="input-brutalista">
+                        </div>
+                        <div class="grupo-input">
+                            <label>Correo Electrónico:</label>
+                            <input type="email" class="input-brutalista" placeholder="ejemplo@rhinosas.com.co">
+                        </div>
+                        <div class="grupo-input">
+                            <label>Número de Teléfono:</label>
+                            <input type="text" class="input-brutalista" placeholder="Ej: 3001234567">
+                        </div>
+                    </div>
+
+                    <h3 class="subtitulo-interno" style="margin-top: 20px;">Carga de Archivos Iniciales</h3>
+                    <div class="grid-2-columnas">
+                        <div class="grupo-input">
+                            <label>Foto de Perfil:</label>
+                            <input type="file" class="input-brutalista" accept="image/*">
+                        </div>
+                        <div class="grupo-input">
+                            <label>Documento de Identidad (PDF):</label>
+                            <input type="file" class="input-brutalista" accept=".pdf">
+                        </div>
+                        <div class="grupo-input">
+                            <label>Certificaciones (PDF/ZIP):</label>
+                            <input type="file" class="input-brutalista">
+                        </div>
+                        <div class="grupo-input">
+                            <label>Hoja de Vida (Word/PDF):</label>
+                            <input type="file" class="input-brutalista">
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-accion-principal" style="margin-top: 30px;">Registrar Empleado en el Sistema</button>
+                </form>
+
+            </div>
+
+        </div>
+
     </main>
 
     <script src="script.js"></script>

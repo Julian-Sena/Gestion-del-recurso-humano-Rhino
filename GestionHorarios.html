@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Rhino</title>
+    <title>Gestión de Horarios - Rhino</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -11,14 +11,11 @@
 </head>
 <body class="body-principal">
 
-
     <header class="header-principal">
-
         <div class="seccion-superior">
-
             <img src="LogoAmarillo.png" alt="Logo Rhino" class="logo-pequeno">
-
             <nav class="seccion-navegacion">
+                <!-- Links estándar, recuerda marcar "activo" en esta página -->
                 <a href="Principal.html" id="nav-inicio" class="nav-btn">Inicio</a>
                 <a href="Horarios.html" id="nav-horarios" class="nav-btn">Horarios</a>
                 <a href="GestionHorarios.html" id="nav-gestion-horarios" class="nav-btn activo">Gestión de Horarios</a>
@@ -29,7 +26,6 @@
                 <a href="GestionEvaluaciones.html" id="nav-gestion-evaluaciones" class="nav-btn">Gestión de evaluaciones</a>
                 <a href="GestionOfertas.html" id="nav-gestion-ofertas" class="nav-btn">Gestionar ofertas laborales</a>
             </nav>
-
             <div class="contenedor-perfil">
                 <div class="info-usuario">
                     <span id="nombre-usuario" class="nombre">Cargando...</span>
@@ -37,12 +33,122 @@
                 </div>
                 <span class="btn-cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</span>
             </div>
-
         </div>
-
     </header>
 
     <main class="contenido-pagina">
+        <div class="contenedor-gestion">
+
+            <!-- SECCIÓN 1: ASIGNAR TURNO -->
+<h1 class="titulo-seccion">Registrar Turno por Día</h1>
+<div class="tarjeta-formulario">
+    <div class="grid-3-columnas">
+        <div class="grupo-input">
+            <label>Empleado:</label>
+            <select class="input-brutalista">
+                <option>Carlos Ramírez</option>
+                <option>Laura Gómez</option>
+                <option>Mateo Vargas</option>
+                <option>Andrea Castro</option>
+                <option>Felipe Martínez</option>
+                <option>Valentina Ruiz</option>
+            </select>
+        </div>
+        <div class="grupo-input">
+            <label>Seleccionar día:</label>
+            <input type="date" class="input-brutalista">
+        </div>
+        <div class="grupo-input">
+            <label>Turno:</label>
+            <select class="input-brutalista">
+                <option>Mañana (M)</option>
+                <option>Tarde (T)</option>
+                <option>Noche (N)</option>
+                <option>Descanso (D)</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn-accion-principal">Guardar Asignación</button>
+</div>
+
+            <!-- SECCIÓN 2: HORARIO GLOBAL (15 DÍAS) -->
+            <h2 class="subtitulo-seccion">Horario Global - Próximos 15 días</h2>
+            <div class="tabla-responsive">
+    <table class="tabla-gestion">
+        <thead>
+    <tr>
+        <th class="bg-titulo">Turno</th>
+        <th class="bg-titulo">Lunes 15</th><th class="bg-titulo">Martes 16</th>
+        <th class="bg-titulo">Miércoles 17</th><th class="bg-titulo">Jueves 18</th>
+        <th class="bg-titulo">Viernes 19</th><th class="bg-titulo">Sábado 20</th>
+        <th class="bg-titulo">Domingo 21</th><th class="bg-titulo">Lunes 22</th>
+        <th class="bg-titulo">Martes 23</th><th class="bg-titulo">Miércoles 24</th>
+        <th class="bg-titulo">Jueves 25</th><th class="bg-titulo">Viernes 26</th>
+        <th class="bg-titulo">Sábado 27</th><th class="bg-titulo">Domingo 28</th>
+        <th class="bg-titulo">Lunes 29</th>
+    </tr>
+</thead>
+        <tbody>
+            <!-- FILA MAÑANA -->
+            <tr>
+                <td class="bg-manana">Mañana</td>
+                <td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td>
+                <td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td>
+                <td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td>
+            </tr>
+            <!-- FILA TARDE -->
+            <tr>
+                <td class="bg-tarde">Tarde</td>
+                <td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td>
+                <td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td>
+                <td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td><td>C. Ramírez<br>L. Gómez<br>M. Vargas</td><td>A. Castro<br>F. Martínez<br>V. Ruiz</td>
+            </tr>
+            <!-- FILA NOCHE -->
+            <tr>
+                <td class="bg-noche">Noche</td>
+                <td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>F. Martínez<br>V. Ruiz<br>L. Gómez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>F. Martínez<br>V. Ruiz<br>L. Gómez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td>
+                <td>F. Martínez<br>V. Ruiz<br>L. Gómez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>F. Martínez<br>V. Ruiz<br>L. Gómez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>F. Martínez<br>V. Ruiz<br>L. Gómez</td>
+                <td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>F. Martínez<br>V. Ruiz<br>L. Gómez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>F. Martínez<br>V. Ruiz<br>L. Gómez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td>
+            </tr>
+            <!-- FILA DESCANSO -->
+            <tr>
+                <td class="bg-descanso">Descanso</td>
+                <td>V. Ruiz<br>L. Gómez<br>F. Martínez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>V. Ruiz<br>L. Gómez<br>F. Martínez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>V. Ruiz<br>L. Gómez<br>F. Martínez</td>
+                <td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>V. Ruiz<br>L. Gómez<br>F. Martínez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>V. Ruiz<br>L. Gómez<br>F. Martínez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td>
+                <td>V. Ruiz<br>L. Gómez<br>F. Martínez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>V. Ruiz<br>L. Gómez<br>F. Martínez</td><td>M. Vargas<br>C. Ramírez<br>A. Castro</td><td>V. Ruiz<br>L. Gómez<br>F. Martínez</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <!-- SECCIÓN 3: REGISTRO HORAS EXTRA -->
+            <h2 class="subtitulo-seccion">Registro de Horas Extra</h2>
+            <div class="tarjeta-formulario">
+                <div class="selector-empleado">
+                    <label>Seleccionar Empleado:</label>
+                    <select id="select-empleado" class="input-brutalista" onchange="mostrarInfoEmpleado()">
+                        <option value="none">-- Seleccione empleado --</option>
+                        <option value="1">Carlos Ramírez</option>
+                        <option value="2">Laura Gómez</option>
+                        <option value="3">Mateo Vargas</option>
+                    </select>
+                </div>
+
+                <div id="info-empleado" class="info-empleado-container oculto">
+                    <img id="img-empleado" src="" alt="Foto" class="foto-empleado-grande">
+                    <div class="stats-empleado">
+                        <p>Horas Extra: <span id="val-he">0</span></p>
+                        <p>Recargo Nocturno: <span id="val-rn">0</span></p>
+                        <p>Extra Nocturno: <span id="val-ern">0</span></p>
+                    </div>
+                    <div class="inputs-tiempo">
+                        <input type="datetime-local" class="input-brutalista">
+                        <input type="datetime-local" class="input-brutalista">
+                        <button class="btn-accion-principal" style="margin-top: 0;">Registrar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <script src="script.js"></script>

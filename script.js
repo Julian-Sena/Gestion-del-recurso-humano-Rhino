@@ -94,6 +94,109 @@ function cerrarModal() {
     document.getElementById('modal-contratacion').classList.add('oculto');
 }
 
+function mostrarInfoEmpleado() {
+    const select = document.getElementById('select-empleado');
+    const container = document.getElementById('info-empleado');
+    const img = document.getElementById('img-empleado');
+
+    if(select.value !== 'none') {
+        container.classList.remove('oculto');
+        // Asignamos la imagen correspondiente (Pos1, Pos2, etc)
+        img.src = 'Pos' + select.value + '.png';
+        // Aquí podrías cargar datos reales desde una base de datos o JSON
+        document.getElementById('val-he').textContent = Math.floor(Math.random() * 20);
+        document.getElementById('val-rn').textContent = Math.floor(Math.random() * 10);
+        document.getElementById('val-ern').textContent = Math.floor(Math.random() * 5);
+    } else {
+        container.classList.add('oculto');
+    }
+}
+
+// ================= LÓGICA PARA GESTIÓN DE PERSONAL =================
+
+// Base de datos simulada de empleados
+const baseDatosEmpleados = [
+    { documento: "1111111111", nombres: "Carlos", apellidos: "Ramírez", tipoDoc: "CC", nacimiento: "1990-05-15", correo: "cramirez@rhinosas.com.co", telefono: "3001111111", foto: "Pos1.png", hNormales: 160, hExtra: 10, hNocturno: 5, hExtraNoc: 2 },
+    { documento: "2222222222", nombres: "Laura", apellidos: "Gómez", tipoDoc: "CC", nacimiento: "1992-08-20", correo: "lgomez@rhinosas.com.co", telefono: "3002222222", foto: "Pos2.png", hNormales: 150, hExtra: 0, hNocturno: 15, hExtraNoc: 0 },
+    { documento: "3333333333", nombres: "Mateo", apellidos: "Vargas", tipoDoc: "CC", nacimiento: "1995-11-10", correo: "mvargas@rhinosas.com.co", telefono: "3003333333", foto: "Pos3.png", hNormales: 160, hExtra: 12, hNocturno: 0, hExtraNoc: 0 },
+    { documento: "4444444444", nombres: "Andrea", apellidos: "Castro", tipoDoc: "CC", nacimiento: "1991-03-25", correo: "acastro@rhinosas.com.co", telefono: "3004444444", foto: "Pos4.png", hNormales: 160, hExtra: 5, hNocturno: 20, hExtraNoc: 5 },
+    { documento: "5555555555", nombres: "Felipe", apellidos: "Martínez", tipoDoc: "CC", nacimiento: "1988-07-30", correo: "fmartinez@rhinosas.com.co", telefono: "3005555555", foto: "Pos5.png", hNormales: 140, hExtra: 0, hNocturno: 0, hExtraNoc: 0 },
+    { documento: "6666666666", nombres: "Valentina", apellidos: "Ruiz", tipoDoc: "CE", nacimiento: "1997-12-05", correo: "vruiz@rhinosas.com.co", telefono: "3006666666", foto: "Pos6.png", hNormales: 160, hExtra: 8, hNocturno: 10, hExtraNoc: 4 }
+];
+
+function buscarEmpleado() {
+    const cedulaBuscada = document.getElementById('buscador-cedula').value;
+    const empleado = baseDatosEmpleados.find(emp => emp.documento === cedulaBuscada);
+    const contenedorPerfil = document.getElementById('perfil-empleado');
+
+    if (empleado) {
+        // Llenar los datos del formulario
+        document.getElementById('perfil-foto-preview').src = empleado.foto;
+        document.getElementById('perfil-h-normales').textContent = empleado.hNormales;
+        document.getElementById('perfil-h-extra').textContent = empleado.hExtra;
+        document.getElementById('perfil-h-nocturno').textContent = empleado.hNocturno;
+        document.getElementById('perfil-h-extra-noc').textContent = empleado.hExtraNoc;
+
+        document.getElementById('perfil-nombres').value = empleado.nombres;
+        document.getElementById('perfil-apellidos').value = empleado.apellidos;
+        document.getElementById('perfil-tipo-doc').value = empleado.tipoDoc;
+        document.getElementById('perfil-documento').value = empleado.documento;
+        document.getElementById('perfil-nacimiento').value = empleado.nacimiento;
+        document.getElementById('perfil-correo').value = empleado.correo;
+        document.getElementById('perfil-telefono').value = empleado.telefono;
+
+        // Asegurarnos de que esté en modo lectura al buscar
+        cancelarEdicion();
+
+        // Mostrar la tarjeta
+        contenedorPerfil.classList.remove('oculto');
+    } else {
+        alert('Empleado no encontrado en el sistema. Verifique el número de documento.');
+        contenedorPerfil.classList.add('oculto');
+    }
+}
+
+// Función para activar los inputs y cambiar los botones
+function habilitarEdicion() {
+    const campos = document.querySelectorAll('.edit-field');
+    campos.forEach(campo => campo.disabled = false);
+
+    document.getElementById('btn-habilitar-edicion').classList.add('oculto');
+    document.getElementById('btn-eliminar').classList.add('oculto');
+
+    document.getElementById('btn-guardar-edicion').classList.remove('oculto');
+    document.getElementById('btn-cancelar-edicion').classList.remove('oculto');
+}
+
+// Función para volver al modo lectura sin guardar (o después de guardar)
+function cancelarEdicion() {
+    const campos = document.querySelectorAll('.edit-field');
+    campos.forEach(campo => campo.disabled = true);
+
+    document.getElementById('btn-habilitar-edicion').classList.remove('oculto');
+    document.getElementById('btn-eliminar').classList.remove('oculto');
+
+    document.getElementById('btn-guardar-edicion').classList.add('oculto');
+    document.getElementById('btn-cancelar-edicion').classList.add('oculto');
+}
+
+function guardarEdicion() {
+    // Aquí iría la lógica real para actualizar la base de datos
+    alert('Datos del empleado actualizados exitosamente.');
+    cancelarEdicion();
+}
+
+function eliminarEmpleado() {
+    // Diálogo de confirmación nativo del navegador
+    const confirmacion = confirm("¿Está completamente seguro de que desea eliminar a este empleado del sistema? Esta acción es irreversible.");
+
+    if (confirmacion) {
+        alert('El empleado ha sido eliminado del sistema.');
+        document.getElementById('perfil-empleado').classList.add('oculto');
+        document.getElementById('buscador-cedula').value = "";
+    }
+}
+
 // ================= LÓGICA DEL MENÚ SUPERIOR (Principal.html y futuras páginas) =================
 
 document.addEventListener('DOMContentLoaded', () => {
