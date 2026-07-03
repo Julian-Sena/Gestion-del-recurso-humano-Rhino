@@ -13,6 +13,8 @@ Este proyecto consiste en el desarrollo de un sistema digital diseñado para opt
 El sistema digital contempla las siguientes funcionalidades divididas por módulos operativos:
 ### Módulo 1: Gestión de Usuarios
  * **Registrar usuario:** Creación y almacenamiento de nuevas cuentas asignando roles específicos (Gerente general, Coordinadora de personal, Supervisora de personal, Administrador de nómina, etc.).
+ <img width="1366" height="768" alt="Captura de pantalla (89)" src="https://github.com/user-attachments/assets/7a255d3c-98b4-43e4-98ba-4c6592b60cac" />
+
  * **Autenticación:** Funcionalidades seguras para iniciar sesión, mantener la sesión activa, cerrar sesión y recuperar accesos por contraseña.
  * **Consulta:** Visualización controlada de la información de los usuarios registrados.
 ### Módulo 2: Gestión de Horarios y Jornadas
