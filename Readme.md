@@ -12,15 +12,17 @@ Este proyecto consiste en el desarrollo de un sistema digital diseñado para opt
 ## Alcance y Módulos del Sistema
 El sistema digital contempla las siguientes funcionalidades divididas por módulos operativos:
 ### Módulo 1: Gestión de Usuarios
- * **Registrar usuario:** Creación y almacenamiento de nuevas cuentas asignando roles específicos (Gerente general, Coordinadora de personal, Supervisora de personal, Administrador de nómina, etc.).
- <img width="1366" height="768" alt="Captura de pantalla (89)" src="https://github.com/user-attachments/assets/7a255d3c-98b4-43e4-98ba-4c6592b60cac" />
-
  * **Autenticación:** Funcionalidades seguras para iniciar sesión, mantener la sesión activa, cerrar sesión y recuperar accesos por contraseña.
  * **Consulta:** Visualización controlada de la información de los usuarios registrados.
+ <img width="1366" height="768" alt="Captura de pantalla (89)" src="https://github.com/user-attachments/assets/32b247c5-0388-4829-a63a-2d082411868a" />
+
 ### Módulo 2: Gestión de Horarios y Jornadas
  * **Asignación de turnos:** Definición y asignación de jornadas laborales de acuerdo con las necesidades operativas.
  * **Control de horas:** Consulta de horarios asignados y seguimiento exhaustivo de horas ordinarias y extra trabajadas.
  * **Periodos de prueba:** Registro, seguimiento y alertas automáticas sobre la fecha de finalización de nuevos empleados.
+ <img width="1366" height="768" alt="Captura de pantalla (92)" src="https://github.com/user-attachments/assets/37cd4ace-de2b-4b1c-b3d5-b93a3da7323b" />
+<img width="1366" height="768" alt="Captura de pantalla (91)" src="https://github.com/user-attachments/assets/d00d40c6-6703-4aec-bdd3-49c8bd715642" />
+
 ### Módulo 3: Gestión de Solicitudes Administrativas
  * Permite a los empleados registrar requerimientos y a los administradores realizar la debida trazabilidad, aprobación o rechazo de solicitudes como:
    * Horas extra.
