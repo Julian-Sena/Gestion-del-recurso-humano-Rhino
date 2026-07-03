@@ -1,42 +1,51 @@
-Aquí tienes una propuesta de archivo `README.md` estructurada para el proyecto **"Gestión del Recurso Humano - Rhino"**, basada en la información del documento (SENA, Rhino Soluciones Integrales S.A.S.) y organizada bajo una simulación lógica de **8 commits** ordenados cronológicamente mediante una tabla scannable.
-
----
-
-# # Gestión del Recurso Humano - Rhino Soluciones Integrales S.A.S.
-
-## ## Historial de Commits del Proyecto
-
-A continuación se detalla la evolución del desarrollo del sistema digital para la administración y control del talento humano de la sede Bogotá (Alcalá):
-
-| Commit | Mensaje de Commit (Descripción) | Módulo / Componente Afectado | Detalles de la Implementación
-
-
-| **1** | `feat: inicializar estructura y documentación base` | Raíz del proyecto | Creación del planteamiento del problema, objetivos generales y definición del alcance con el SENA.
-
-
-|**2**| `feat: implementar módulo 1 de gestión de usuarios` | Módulo 1: Usuarios | Desarrollo de flujos de registro, inicio de sesión, consulta de cuentas y cierre de sesión con roles jerárquicos.
-
-
-|**3**|  `feat: crear componentes para la gestión de horarios` | Módulo 2: Horarios | Implementación de asignación de turnos semanales, consulta de horas trabajadas y seguimiento a periodos de prueba.
-
-
-| **4** | `feat: integrar submódulo de radicación de solicitudes` | Módulo 3: Solicitudes | Programación del buzón para horas extra, permisos, ausencias previas, solicitudes de aumento, ascensos y renuncias.
-
-
-| **5** | `feat: añadir sistema lineal de evaluación de desempeño` | Módulo 4: Evaluaciones | Tabulación analítica de criterios (puntualidad, cumplimiento, calidad) en escala del 1 al 10 y reportes de incidencias.
-
- 
-| **6** | `feat: estructurar el listado general de administración` | Módulo 5: Personal | Creación del repositorio documental centralizado, asignación de cargos, áreas y alta de nuevos colaboradores en tiempo real.
-
- 
-| **7** | `feat: agregar funcionalidad de selección y ofertas` | Módulo 5: Selección | Implementación del módulo para publicación de ofertas laborales y almacenamiento/clasificación de hojas de vida.
-
-
-| **8** | `ui: acoplar prototipos finales figma y vistas de rol` | Interfaz de Usuario (UI) | Integración del Dashboard unificado con menú lateral responsivo y vistas segregadas (Empleado, Analista, Admin).
-
-
-
-> ###  Información General del Proyecto
-> * **Entidad:** Servicio Nacional de Aprendizaje (SENA).
-> * **Cliente Objetivo:** Rhino Soluciones Integrales S.A.S. (Sede Bogotá - Alcalá).
-> * **Objetivo Principal:** Reemplazar los flujos manuales y formatos físicos por una plataforma web centralizada bajo estándares de calidad de software que optimice el ciclo operativo de los colaboradores.
+# Proyecto de Gestion del Talento Humano - Rhino Soluciones Integrales S.A.S.
+Este proyecto consiste en el desarrollo de un sistema digital diseñado para optimizar, centralizar y automatizar la administración del recurso humano en Rhino Soluciones Integrales S.A.S. (Sede Bogotá, Alcalá) . El sistema surge como solución a las dificultades actuales de la organización derivadas del manejo manual de la información en formatos físicos y hojas de cálculo independientes, lo cual genera reprocesos, riesgos de pérdida de datos e inconsistencias.
+## Objetivos del Proyecto
+### Objetivo General
+ * Desarrollar un sistema digital para la gestión del talento humano que centralice la información del personal, automatice procesos administrativos y permita el seguimiento del desempeño laboral para apoyar la toma de decisiones dentro de la organización.
+### Objetivos Específicos
+ * Centralizar la información del personal de la organización, permitiendo su registro, actualización y consulta de forma organizada.
+ * Optimizar el control de las jornadas laborales, facilitando la asignación y consulta de horarios, así como el seguimiento de las horas trabajadas.
+ * Facilitar la gestión de solicitudes realizadas por los empleados, permitiendo registrar, consultar y dar respuesta a requerimientos administrativos.
+ * Establecer mecanismos de evaluación y seguimiento del desempeño del personal para identificar resultados y registrar incidencias.
+ * Diseñar una funcionalidad que permita gestionar las ofertas laborales y las hojas de vida de los postulantes.
+## Alcance y Módulos del Sistema
+El sistema digital contempla las siguientes funcionalidades divididas por módulos operativos:
+### Módulo 1: Gestión de Usuarios
+ * **Registrar usuario:** Creación y almacenamiento de nuevas cuentas asignando roles específicos (Gerente general, Coordinadora de personal, Supervisora de personal, Administrador de nómina, etc.).
+ * **Autenticación:** Funcionalidades seguras para iniciar sesión, mantener la sesión activa, cerrar sesión y recuperar accesos por contraseña.
+ * **Consulta:** Visualización controlada de la información de los usuarios registrados.
+### Módulo 2: Gestión de Horarios y Jornadas
+ * **Asignación de turnos:** Definición y asignación de jornadas laborales de acuerdo con las necesidades operativas.
+ * **Control de horas:** Consulta de horarios asignados y seguimiento exhaustivo de horas ordinarias y extra trabajadas.
+ * **Periodos de prueba:** Registro, seguimiento y alertas automáticas sobre la fecha de finalización de nuevos empleados.
+### Módulo 3: Gestión de Solicitudes Administrativas
+ * Permite a los empleados registrar requerimientos y a los administradores realizar la debida trazabilidad, aprobación o rechazo de solicitudes como:
+   * Horas extra.
+   * Inasistencias o permisos anticipados.
+   * Solicitudes de aumento salarial o ascenso.
+   * Cambios de horario.
+   * Anuncios anticipados de renuncia.
+### Módulo 4: Evaluación de Empleados
+ * **Configuración de criterios:** Creación de parámetros personalizados basados en la organización (puntualidad, cumplimiento, responsabilidad, actitud).
+ * **Resultados:** Consolidación digital de los resultados de desempeño e informes detallados.
+ * **Reporte de incidencias:** Registro y almacenamiento de fallas o errores cometidos por los colaboradores para el seguimiento de planes de mejora.
+## Especificaciones Técnicas y de Calidad
+El sistema ha sido estructurado bajo los estándares de las normas de calidad de software ISO/IEC/IEEE 29148:2018 para los requisitos funcionales, e ISO/IEC 25010 (2022/2023) para los siguientes criterios no funcionales:
+ * **Disponibilidad:** Operación garantizada con un mínimo del 99% del tiempo disponible durante el horario laboral.
+ * **Usabilidad:** Interfaz intuitiva que permite completar flujos básicos (como enviar solicitudes o verificar horarios) en menos de 1 minuto sin asistencia externa.
+ * **Adaptabilidad:** Diseño completamente responsivo optimizado para teléfonos móviles y tabletas.
+ * **Eficiencia de desempeño:** Cargas de páginas, búsquedas y reportes de listas completadas en un tiempo inferior a los 2 segundos.
+ * **Escalabilidad:** Soporte de concurrencia para un mínimo de 30 usuarios simultáneos sin degradación de rendimiento.
+ * **Compatibilidad:** Funcionamiento optimizado al 100% en los navegadores Google Chrome, Mozilla Firefox y Microsoft Edge.
+## Información del Proyecto Académico
+Este software fue desarrollado como proyecto de gestión dentro del Servicio Nacional de Aprendizaje (SENA).
+ * **Institución:** SENA - Regional Distrito Capital.
+ * **Centro de Formación:** Regional Centro de Electrónica, Electricidad y Telecomunicaciones.
+ * **Instructora Líder:** Sandra Peñaranda.
+ * **Fecha de Documentación:** 03 de marzo de 2026.
+### Integrantes del Equipo de Desarrollo
+ * Cristian Santiago Oliveros Martínez
+ * Julián Andrés Hernández Ortega
+ * Miguel Angel Rojas Lugo
+ * Andres Fernando Martínez Arévalo
