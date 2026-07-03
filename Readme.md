@@ -22,6 +22,7 @@ El sistema digital contempla las siguientes funcionalidades divididas por módul
  * **Periodos de prueba:** Registro, seguimiento y alertas automáticas sobre la fecha de finalización de nuevos empleados.
  <img width="1366" height="768" alt="Captura de pantalla (91)" src="https://github.com/user-attachments/assets/2771ca9c-b04c-47ab-aff3-e7f0ad60acc2" />
 <img width="1366" height="768" alt="Captura de pantalla (92)" src="https://github.com/user-attachments/assets/2a79129c-d5ed-440b-b6be-e5a9e443daf8" />
+
 ### Módulo 3: Gestión de Solicitudes Administrativas
  * Permite a los empleados registrar requerimientos y a los administradores realizar la debida trazabilidad, aprobación o rechazo de solicitudes como:
    * Horas extra.
