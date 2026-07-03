@@ -20,9 +20,8 @@ El sistema digital contempla las siguientes funcionalidades divididas por módul
  * **Asignación de turnos:** Definición y asignación de jornadas laborales de acuerdo con las necesidades operativas.
  * **Control de horas:** Consulta de horarios asignados y seguimiento exhaustivo de horas ordinarias y extra trabajadas.
  * **Periodos de prueba:** Registro, seguimiento y alertas automáticas sobre la fecha de finalización de nuevos empleados.
- <img width="1366" height="768" alt="Captura de pantalla (92)" src="https://github.com/user-attachments/assets/37cd4ace-de2b-4b1c-b3d5-b93a3da7323b" />
-<img width="1366" height="768" alt="Captura de pantalla (91)" src="https://github.com/user-attachments/assets/d00d40c6-6703-4aec-bdd3-49c8bd715642" />
-
+ <img width="1366" height="768" alt="Captura de pantalla (91)" src="https://github.com/user-attachments/assets/2771ca9c-b04c-47ab-aff3-e7f0ad60acc2" />
+<img width="1366" height="768" alt="Captura de pantalla (92)" src="https://github.com/user-attachments/assets/2a79129c-d5ed-440b-b6be-e5a9e443daf8" />
 ### Módulo 3: Gestión de Solicitudes Administrativas
  * Permite a los empleados registrar requerimientos y a los administradores realizar la debida trazabilidad, aprobación o rechazo de solicitudes como:
    * Horas extra.
@@ -34,6 +33,7 @@ El sistema digital contempla las siguientes funcionalidades divididas por módul
  * **Configuración de criterios:** Creación de parámetros personalizados basados en la organización (puntualidad, cumplimiento, responsabilidad, actitud).
  * **Resultados:** Consolidación digital de los resultados de desempeño e informes detallados.
  * **Reporte de incidencias:** Registro y almacenamiento de fallas o errores cometidos por los colaboradores para el seguimiento de planes de mejora.
+ 
 ## Especificaciones Técnicas y de Calidad
 El sistema ha sido estructurado bajo los estándares de las normas de calidad de software ISO/IEC/IEEE 29148:2018 para los requisitos funcionales, e ISO/IEC 25010 (2022/2023) para los siguientes criterios no funcionales:
  * **Disponibilidad:** Operación garantizada con un mínimo del 99% del tiempo disponible durante el horario laboral.
