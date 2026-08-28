@@ -540,9 +540,9 @@ input[type="password"] {
 }
 
 .tarjeta-historial {
-    border: 4px solid #000000;
+    border: 6px solid #000000;
     padding: 25px;
-    box-shadow: 6px 6px 0px rgba(0,0,0,1);
+    box-shadow: 8px 8px 0px rgba(0,0,0,1);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -1546,6 +1546,50 @@ input[type="password"] {
     padding: 12px;
 }
 
+/* ================= ESTILOS ADICIONALES PARA ROL VISITANTE ================= */
+
+.link-visitante {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1A3B4C;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.link-visitante:hover {
+    color: #D4AF37;
+}
+
+
+
+/* Asegura que todos los botones de la navbar mantengan su borde izquierdo y encajen limpios */
+.nav-visitante .nav-btn {
+    border-left: 4px solid #000000 !important;
+}
+
+/* En caso de que se usen bordes colapsados o compartidos entre botones consecutivamente */
+.nav-visitante .nav-btn + .nav-btn {
+    margin-left: -4px;
+}
+
+.btn-retirar {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 4px solid #000000;
+    padding: 10px 18px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-retirar:hover {
+    background-color: #D32F2F;
+    color: #FFFFFF;
+}
+
 /* ================= 3. DISEÑO RESPONSIVE GLOBAL (TABLETS Y CELULARES) ================= */
 
 @media (max-width: 1024px) {
@@ -1742,4 +1786,24 @@ input[type="password"] {
     .botones-resolucion {
         flex-direction: column;
     }
+
+    .nav-visitante {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .nav-visitante .nav-btn {
+        width: 100%;
+        padding: 12px 0;
+        border: 4px solid #000000 !important;
+        box-sizing: border-box;
+    }
+
+    /* En vertical, eliminamos el desfase horizontal y superponemos el borde superior */
+    .nav-visitante .nav-btn + .nav-btn {
+        margin-left: 0;
+        margin-top: -4px;
+    }
+    
 }

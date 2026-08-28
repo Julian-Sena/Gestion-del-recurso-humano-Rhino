@@ -418,6 +418,50 @@ function cerrarModal(id) {
     document.getElementById(id).classList.add('oculto');
 }
 
+// ================= FUNCIONES PARA EL ROL VISITANTE =================
+
+// Alternar despliegue de información detallada de una oferta
+function toggleDetalleOferta(idOferta) {
+    const contenedor = document.getElementById(idOferta);
+    if (contenedor) {
+        contenedor.classList.toggle('oculto');
+    }
+}
+
+// Abrir modal de postulación
+function abrirModalAplicar(nombreOferta) {
+    const modal = document.getElementById('modal-aplicar');
+    const tituloModal = document.getElementById('nombre-oferta-modal');
+    if (modal && tituloModal) {
+        tituloModal.textContent = "Cargo: " + nombreOferta;
+        modal.classList.remove('oculto');
+    }
+}
+
+// Cerrar modal de postulación
+function cerrarModalAplicar() {
+    const modal = document.getElementById('modal-aplicar');
+    if (modal) {
+        modal.classList.add('oculto');
+    }
+}
+
+// Confirmar envío de postulación
+function enviarAplicacion(event) {
+    event.preventDefault();
+    alert("¡Tu postulación ha sido enviada con éxito!");
+    cerrarModalAplicar();
+}
+
+// Retirar aplicación guardada
+function retirarAplicacion(boton) {
+    if (confirm("¿Estás seguro de que deseas retirar tu aplicación a esta oferta?")) {
+        const tarjeta = boton.closest('.tarjeta-historial');
+        if (tarjeta) {
+            tarjeta.remove();
+        }
+    }
+}
 // ================= LÓGICA DEL MENÚ SUPERIOR (Principal.html y futuras páginas) =================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -487,3 +531,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+

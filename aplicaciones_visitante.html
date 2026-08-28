@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKOR - Mis Aplicaciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body-principal">
+
+    <header class="header-principal">
+        <div class="seccion-superior">
+            <img src="LogoBlanco.png" alt="ANKOR Logo" class="logo-pequeno">
+            
+            <nav class="seccion-navegacion nav-visitante">
+                <a href="ofertas_visitante.html" class="nav-btn">Ver ofertas laborales</a>
+                <a href="aplicaciones_visitante.html" class="nav-btn activo">Ver aplicaciones</a>
+            </nav>
+
+            <div class="contenedor-perfil">
+                <div class="info-usuario">
+                    <span class="nombre">Modo Visitante</span>
+                    <span class="rol">Explorador de Empleo</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenido-pagina">
+        <section class="contenedor-solicitudes">
+            <h1 class="titulo-seccion">Ofertas a las que has Aplicado</h1>
+
+            <div class="lista-historial" id="lista-aplicaciones">
+
+                <!-- Aplicación de Ejemplo 1 -->
+                <article class="tarjeta-historial historial-1">
+                    <div class="cabecera-historial">
+                        <div>
+                            <h3>Desarrollador Java Junior</h3>
+                            <p style="color: #6E7174; font-weight: bold; margin-top: 5px;">Rhino Soluciones Integrales S.A.S</p>
+                        </div>
+                        <span class="estado-etiqueta estado-revision">En Revisión</span>
+                    </div>
+                    
+                    <p class="fecha-historial">Fecha de postulación: 24/08/2026</p>
+                    
+                    <div class="detalle-historial">
+                        <p><strong>Hoja de vida adjunta:</strong> mi_cv_actualizado.pdf</p>
+                    </div>
+
+                    <div style="margin-top: 15px; display: flex; justify-content: flex-end;">
+                        <button class="btn-retirar" onclick="retirarAplicacion(this)">Retirar Aplicación</button>
+                    </div>
+                </article>
+
+                <!-- Aplicación de Ejemplo 2 -->
+                <article class="tarjeta-historial historial-2">
+                    <div class="cabecera-historial">
+                        <div>
+                            <h3>Coordinador de Almacén</h3>
+                            <p style="color: #6E7174; font-weight: bold; margin-top: 5px;">Logística & Operaciones Ankor</p>
+                        </div>
+                        <span class="estado-etiqueta estado-aprobada">Postulación Recibida</span>
+                    </div>
+
+                    <p class="fecha-historial">Fecha de postulación: 20/08/2026</p>
+
+                    <div class="detalle-historial">
+                        <p><strong>Hoja de vida adjunta:</strong> cv_logistica_2026.pdf</p>
+                    </div>
+
+                    <div style="margin-top: 15px; display: flex; justify-content: flex-end;">
+                        <button class="btn-retirar" onclick="retirarAplicacion(this)">Retirar Aplicación</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
