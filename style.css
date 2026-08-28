@@ -553,6 +553,21 @@ input[type="password"] {
     transform: translateY(-5px);
 }
 
+/* Botón/Texto para regresar al inicio desde el Modo Visitante */
+.btn-volver-inicio {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    margin-top: 4px;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.btn-volver-inicio:hover {
+    color: #D4AF37;
+}
+
 .historial-1 { background-color: #F9F6ED; } /* Pastel dorado */
 .historial-2 { background-color: #EAF5F1; } /* Pastel verde */
 

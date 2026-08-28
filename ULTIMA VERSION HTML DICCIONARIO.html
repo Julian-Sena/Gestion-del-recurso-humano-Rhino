@@ -7,15 +7,15 @@
   <title>mydb Data Dictionary</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script>
-    // Highlight table corresponding to the current fragment in the URL.
+    
     $(document).ready(function(){
       $("a").click(function() {
         var elem = $(this);
-        // Remove all classes from tables.
+    
         $("table").removeClass( "focused" )
-        // Get a.href value and extract its fragment id.
+        
         var id = elem.attr("href");
-        // Highlight table using fragment id.
+        
         $(id).addClass( "focused" );
       });
     });
