@@ -1,15 +1,15 @@
-/* ================= CSS ACTUALIZADO CON NUEVA PALETA DE COLORES ================= */
+/* ================= CSS ACTUALIZADO CON NUEVA PALETA DE COLORES "ANKOR" ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    border-radius: 0 !important; /* Fuerza bordes completamente rectos */
+    border-radius: 0 !important;
 }
 
 body {
     min-height: 100vh;
-    background-color: #29166f; /* Azul oscuro solicitado */
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
 }
 
 /* ================= 1. ESTILOS DEL LOGIN (index.html) ================= */
@@ -21,7 +21,6 @@ body {
     width: 100%;
 }
 
-/* MITAD IZQUIERDA */
 .mitad-izquierda {
     width: 50%;
     background-color: #FFFFFF;
@@ -44,13 +43,12 @@ body {
     text-align: center;
     max-width: 80%;
     font-size: 1.1rem;
-    color: #333333;
+    color: #6E7174; /* Nuevo Gris secundario */
 }
 
-/* MITAD DERECHA */
 .mitad-derecha {
     width: 50%;
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     position: relative;
     padding: 60px 50px;
     display: flex;
@@ -58,7 +56,6 @@ body {
     justify-content: center;
 }
 
-/* Tab Bar - Botones pegados horizontalmente */
 .tab-bar {
     display: flex;
     gap: 0;
@@ -84,15 +81,10 @@ body {
     border-right: none;
 }
 
-.tab-btn:hover {
-    background-color: #F1C40F; /* Amarillo */
+.tab-btn:hover, .tab-btn.activo {
+    background-color: #D4AF37; /* Nuevo Dorado */
 }
 
-.tab-btn.activo {
-    background-color: #F1C40F; /* Amarillo */
-}
-
-/* Sección Login - Pegada a las pestañas */
 .seccion-login {
     background-color: #FFFFFF;
     border: 7px solid #000000;
@@ -112,10 +104,9 @@ body {
 
 .contenido-tab h2 {
     margin-bottom: 20px;
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
 }
 
-/* Inputs y Botón de Inicio de Sesión */
 input[type="text"],
 input[type="password"] {
     width: 100%;
@@ -129,7 +120,7 @@ input[type="password"] {
 .btn-login {
     width: 100%;
     padding: 15px;
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: #FFFFFF;
     border: 4px solid #000000;
     font-weight: bold;
@@ -139,10 +130,9 @@ input[type="password"] {
 }
 
 .btn-login:hover {
-    background-color: #03923e; /* Verde oscuro solicitado */
+    background-color: #3A7880; /* Nuevo Verde intermedio para hover */
 }
 
-/* Link Inferior Derecho */
 .link-quienes-somos {
     position: absolute;
     bottom: 20px;
@@ -154,18 +144,18 @@ input[type="password"] {
 }
 
 .link-quienes-somos:hover {
-    color: #F1C40F;
+    color: #D4AF37; /* Nuevo Dorado */
 }
 
-/* Mensaje de error */
 .mensaje-error {
-    color: #D32F2F;
+    color: #D32F2F; /* Mantenido para errores */
     font-weight: bold;
     margin-top: 15px;
     text-align: center;
     font-size: 1rem;
     min-height: 24px;
 }
+
 /* ================= 2. ESTILOS PARA PRINCIPAL Y MENÚ SUPERIOR ================= */
 
 .body-principal {
@@ -174,35 +164,17 @@ input[type="password"] {
 }
 
 .header-principal {
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-/* --- HEADER ÚNICO (Logo + Menú + Perfil) --- */
 .seccion-superior {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px; /* Reducimos el espacio vertical para que el menú sea más delgado */
-    border-bottom: 7px solid #000000; /* Borde inferior estricto de toda la barra */
-    gap: 15px; /* Espacio entre el logo, los botones y el perfil */
-}
-
-.logo-pequeno {
-    height: 40px; /* Lo achicamos un poquito para optimizar la altura de la barra */
-    width: auto;
-    object-fit: contain;
-    flex-shrink: 0; /* Evita que el logo se deforme si la pantalla es estrecha */
-}
-
-/* --- HEADER ÚNICO (Logo + Menú + Perfil) --- */
-.seccion-superior {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch; /* CAMBIO CLAVE: Permite que los elementos interiores ocupen el 100% de la altura */
-    padding: 0 30px; /* CAMBIO CLAVE: 0 padding arriba y abajo para que los botones toquen los bordes */
+    align-items: stretch;
+    padding: 0 30px;
     border-bottom: 7px solid #000000;
     gap: 15px;
 }
@@ -212,11 +184,10 @@ input[type="password"] {
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
-    align-self: center; /* Mantiene el logo centrado sin que se estire */
-    margin: 15px 0; /* Este margen es el que ahora define el alto total de la barra azul */
+    align-self: center;
+    margin: 15px 0;
 }
 
-/* --- NAVEGACIÓN (EN EL MEDIO) --- */
 .seccion-navegacion {
     display: flex;
     flex-grow: 1;
@@ -225,11 +196,11 @@ input[type="password"] {
 
 .nav-btn {
     display: flex;
-    align-items: center; /* Centra el texto del botón verticalmente */
+    align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 15px; /* Quitamos el padding vertical fijo; ahora el botón se estira solo */
-    background-color: #29166f;
+    padding: 0 15px;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: #FFFFFF;
     text-decoration: none;
     font-weight: bold;
@@ -239,21 +210,20 @@ input[type="password"] {
 }
 
 .nav-btn:hover {
-    background-color: #03923e;
+    background-color: #3A7880; /* Nuevo Verde intermedio */
 }
 
 .nav-btn.activo {
-    background-color: #F1C40F;
+    background-color: #D4AF37; /* Nuevo Dorado */
     color: #000000;
 }
 
-/* --- PERFIL DERECHO --- */
 .contenedor-perfil {
     display: flex;
     align-items: center;
     gap: 20px;
     flex-shrink: 0;
-    align-self: center; /* Mantiene el texto del usuario centrado verticalmente */
+    align-self: center;
 }
 
 .info-usuario {
@@ -270,7 +240,7 @@ input[type="password"] {
 
 .info-usuario .rol {
     font-size: 0.85rem;
-    color: #F1C40F;
+    color: #D4AF37; /* Nuevo Dorado */
     font-weight: bold;
 }
 
@@ -292,59 +262,56 @@ input[type="password"] {
 .contenido-pagina {
     padding: 40px 20px;
     display: flex;
-    justify-content: center; /* Centra el contenedor de noticias en la pantalla */
+    justify-content: center;
 }
 
 .contenedor-noticias {
     width: 100%;
-    max-width: 1000px; /* Evita que las noticias ocupen todo el ancho en pantallas grandes */
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Separación vertical entre cada noticia */
+    gap: 40px;
 }
 
 .titulo-seccion {
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     font-size: 2rem;
     text-align: center;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-/* Tarjeta base de noticia */
 .tarjeta-noticia {
     display: flex;
-    border: 6px solid #000000; /* Borde recto de 6px solicitado */
+    border: 6px solid #000000;
     padding: 25px;
-    align-items: center; /* Centra el texto y la imagen verticalmente */
-    gap: 30px; /* Separación entre la imagen y el texto */
-    box-shadow: 8px 8px 0px rgba(0,0,0,1); /* Sombra sólida negra para darle un toque moderno/brutalista al diseño */
+    align-items: center;
+    gap: 30px;
+    box-shadow: 8px 8px 0px rgba(0,0,0,1);
     transition: transform 0.2s ease;
 }
 
 .tarjeta-noticia:hover {
-    transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el mouse */
+    transform: translateY(-5px);
 }
 
-/* Colores de fondo solicitados */
-.noticia-1 { background-color: #cbdfca; }
-.noticia-2 { background-color: #dfdfca; }
-.noticia-3 { background-color: #cdcadf; }
+/* Nuevos fondos pastel basados en tu paleta para que el texto se lea bien */
+.noticia-1 { background-color: #EAF5F1; } /* Tint del verde claro */
+.noticia-2 { background-color: #F9F6ED; } /* Tint del dorado */
+.noticia-3 { background-color: #E8EFF2; } /* Tint del azul oscuro */
 
-/* Estilos de la imagen */
 .img-noticia {
-    width: 220px; /* Tamaño fijo */
-    aspect-ratio: 1 / 1; /* Escala 1:1 (cuadrada) */
-    object-fit: cover; /* Evita que la imagen se deforme, rellenando el cuadrado */
-    border: 4px solid #000000; /* Borde de 4px solicitado */
-    flex-shrink: 0; /* Evita que la imagen se encoja si hay mucho texto */
+    width: 220px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 4px solid #000000;
+    flex-shrink: 0;
 }
 
-/* Contenedor del texto */
 .texto-noticia {
     display: flex;
     flex-direction: column;
-    text-align: left; /* El texto siempre a la izquierda */
+    text-align: left;
 }
 
 .texto-noticia h2 {
@@ -356,32 +323,24 @@ input[type="password"] {
 
 .texto-noticia p {
     font-size: 1rem;
-    color: #333333;
-    line-height: 1.6; /* Mejora la lectura del párrafo */
+    color: #6E7174; /* Nuevo Gris */
+    line-height: 1.6;
 }
 
-/* Clases para alternar la posición de la imagen */
-.img-izquierda {
-    flex-direction: row;
-}
-
-.img-derecha {
-    flex-direction: row-reverse; /* Voltea el orden: la imagen pasa a la derecha, el texto a la izquierda */
-}
-
+.img-izquierda { flex-direction: row; }
+.img-derecha { flex-direction: row-reverse; }
 
 /* ================= 5. ESTILOS PARA LA PÁGINA DE HORARIOS ================= */
 
 .contenedor-horarios {
     width: 100%;
-    max-width: 1100px; /* Limita el ancho para que no se vea desproporcionado en pantallas gigantes */
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-/* --- CONTADORES DE HORAS --- */
 .resumen-horas {
     display: flex;
     gap: 20px;
@@ -394,22 +353,20 @@ input[type="password"] {
     padding: 25px;
     background-color: #FFFFFF;
     box-shadow: 6px 6px 0px rgba(0,0,0,1);
-    transition: transform 0.2s ease; /* <-- NUEVA LÍNEA */
+    transition: transform 0.2s ease;
 }
 
-/* <-- NUEVO BLOQUE: Efecto hover para elevar las tarjetas de meses */
 .tarjeta-mes:hover {
     transform: translateY(-5px);
 }
 
-/* Resaltamos la tarjeta del mes actual en amarillo */
 .tarjeta-mes.mes-actual {
-    background-color: #F1C40F;
+    background-color: #D4AF37; /* Nuevo Dorado */
 }
 
 .titulo-mes {
     font-size: 1.3rem;
-    color: #29166f; /* Azul oscuro */
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     margin-bottom: 20px;
     text-align: center;
     border-bottom: 4px solid #000000;
@@ -432,27 +389,25 @@ input[type="password"] {
     padding-bottom: 5px;
 }
 
-/* Colores dinámicos según el fondo de la tarjeta */
 .mes-anterior .valor-hora {
-    color: #03923e; /* Verde oscuro resalta bien en fondo blanco */
+    color: #3A7880; /* Nuevo Verde intermedio */
 }
 
 .mes-actual .valor-hora {
-    color: #29166f; /* Azul oscuro resalta perfecto sobre el fondo amarillo */
+    color: #1A3B4C; /* Nuevo Azul oscuro */
 }
 
-/* --- TABLAS DE HORARIOS --- */
 .subtitulo-seccion {
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     font-size: 1.5rem;
-    border-left: 7px solid #F1C40F;
+    border-left: 7px solid #D4AF37; /* Nuevo Dorado */
     padding-left: 10px;
     margin-top: 10px;
 }
 
 .tabla-responsive {
     width: 100%;
-    overflow-x: auto; /* Permite deslizar horizontalmente si la pantalla es pequeña */
+    overflow-x: auto;
     border: 6px solid #000000;
     box-shadow: 6px 6px 0px rgba(0,0,0,1);
     background-color: #FFFFFF;
@@ -461,7 +416,7 @@ input[type="password"] {
 .tabla-turnos {
     width: 100%;
     border-collapse: collapse;
-    min-width: 900px; /* Fuerza el ancho mínimo para que las 15 columnas no se aplasten en celular */
+    min-width: 900px;
 }
 
 .tabla-turnos th,
@@ -474,18 +429,17 @@ input[type="password"] {
 }
 
 .tabla-turnos th {
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: #FFFFFF;
     font-size: 0.9rem;
 }
 
-/* Colores de las celdas de turnos según tu paleta */
+/* Colores de turnos adaptados a los tonos pastel */
 .turno-m { background-color: #FFFFFF; color: #000000; }
-.turno-t { background-color: #cbdfca; color: #000000; }
-.turno-n { background-color: #cdcadf; color: #000000; }
-.turno-d { background-color: #29166f; color: #F1C40F; } /* Fondo azul oscuro y letra amarilla para el descanso */
+.turno-t { background-color: #EAF5F1; color: #000000; } /* Pastel verde */
+.turno-n { background-color: #E8EFF2; color: #000000; } /* Pastel azul */
+.turno-d { background-color: #1A3B4C; color: #D4AF37; } /* Fondo azul oscuro y letra dorada */
 
-/* --- LEYENDA --- */
 .leyenda-turnos {
     display: flex;
     gap: 20px;
@@ -510,17 +464,15 @@ input[type="password"] {
 
 /* ================= 6. ESTILOS PARA LA PÁGINA DE SOLICITUDES ================= */
 
-
 .contenedor-solicitudes {
     width: 100%;
-    max-width: 850px; /* Ancho restringido para que el formulario no sea kilométrico a lo ancho */
+    max-width: 850px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* --- FORMULARIO --- */
 .tarjeta-formulario {
     border: 6px solid #000000;
     padding: 35px;
@@ -540,10 +492,9 @@ input[type="password"] {
 .grupo-input label {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
 }
 
-/* Combobox y Textarea comparten este estilo */
 .input-brutalista {
     width: 100%;
     border: 4px solid #000000;
@@ -556,12 +507,12 @@ input[type="password"] {
 
 .input-brutalista:focus {
     background-color: #f7f7f7;
-    border-color: #29166f;
+    border-color: #1A3B4C; /* Nuevo Azul oscuro */
 }
 
 .area-texto {
-    resize: vertical; /* Permite al usuario hacer más grande el cuadro solo hacia abajo */
-    min-height: 180px; /* Altura inicial generosa */
+    resize: vertical;
+    min-height: 180px;
     line-height: 1.5;
 }
 
@@ -569,7 +520,7 @@ input[type="password"] {
     width: 100%;
     padding: 15px;
     margin-top: 10px;
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: #FFFFFF;
     border: 4px solid #000000;
     font-weight: bold;
@@ -579,10 +530,9 @@ input[type="password"] {
 }
 
 .btn-enviar-solicitud:hover {
-    background-color: #03923e; /* Verde oscuro para confirmar acción positiva */
+    background-color: #3A7880; /* Nuevo Verde intermedio */
 }
 
-/* --- HISTORIAL DE SOLICITUDES --- */
 .lista-historial {
     display: flex;
     flex-direction: column;
@@ -590,7 +540,7 @@ input[type="password"] {
 }
 
 .tarjeta-historial {
-    border: 4px solid #000000; /* Borde de 4px para diferenciarlo del formulario principal de 6px */
+    border: 4px solid #000000;
     padding: 25px;
     box-shadow: 6px 6px 0px rgba(0,0,0,1);
     display: flex;
@@ -599,14 +549,12 @@ input[type="password"] {
     transition: transform 0.2s ease;
 }
 
-/* <-- NUEVO BLOQUE: Efecto hover para elevar las tarjetas de meses */
 .tarjeta-historial:hover {
     transform: translateY(-5px);
 }
 
-/* Colores reciclados del tablón de anuncios */
-.historial-1 { background-color: #dfdfca; }
-.historial-2 { background-color: #cbdfca; }
+.historial-1 { background-color: #F9F6ED; } /* Pastel dorado */
+.historial-2 { background-color: #EAF5F1; } /* Pastel verde */
 
 .cabecera-historial {
     display: flex;
@@ -624,20 +572,19 @@ input[type="password"] {
 
 .fecha-historial {
     font-size: 0.95rem;
-    color: #333333;
+    color: #6E7174; /* Nuevo Gris */
 }
 
 .detalle-historial {
     font-size: 1.05rem;
     color: #000000;
     line-height: 1.5;
-    background-color: rgba(255, 255, 255, 0.5); /* Fondo semitransparente blanco para que el texto resalte sobre los colores */
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 15px;
     border: 2px solid #000000;
     margin-top: 5px;
 }
 
-/* Etiquetas de estado */
 .estado-etiqueta {
     padding: 5px 15px;
     border: 3px solid #000000;
@@ -646,8 +593,8 @@ input[type="password"] {
     text-transform: uppercase;
 }
 
-.estado-revision { background-color: #F1C40F; color: #000000; }
-.estado-aprobada { background-color: #03923e; color: #FFFFFF; }
+.estado-revision { background-color: #D4AF37; color: #000000; } /* Dorado */
+.estado-aprobada { background-color: #6CC4A1; color: #000000; } /* Verde claro */
 
 /* ================= 7. ESTILOS PARA RESULTADOS DE EVALUACIÓN ================= */
 
@@ -662,7 +609,7 @@ input[type="password"] {
 
 .grid-evaluaciones {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas del mismo tamaño */
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
@@ -672,12 +619,11 @@ input[type="password"] {
     box-shadow: 8px 8px 0px rgba(0,0,0,1);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease; /* <-- NUEVA LÍNEA: Hace que el movimiento sea suave */
+    transition: transform 0.2s ease;
 }
 
-/* <-- NUEVO BLOQUE: Aplica el levantamiento al pasar el mouse */
 .tarjeta-evaluacion:hover {
-    transform: translateY(-5px); /* Sube la tarjeta 5 píxeles */
+    transform: translateY(-5px);
 }
 
 .cabecera-categoria {
@@ -690,11 +636,11 @@ input[type="password"] {
 
 .cabecera-categoria h2 {
     font-size: 1.4rem;
-    color: #29166f; /* Azul oscuro */
+    color: #1A3B4C; /* Nuevo Azul oscuro */
 }
 
 .peso-categoria {
-    background-color: #F1C40F; /* Amarillo */
+    background-color: #D4AF37; /* Nuevo Dorado */
     color: #000000;
     font-weight: bold;
     font-size: 1.1rem;
@@ -724,7 +670,7 @@ input[type="password"] {
 }
 
 .puntaje-metrica {
-    background-color: #03923e; /* Verde oscuro */
+    background-color: #3A7880; /* Nuevo Verde intermedio */
     color: #FFFFFF;
     font-weight: bold;
     font-size: 1.1rem;
@@ -735,7 +681,7 @@ input[type="password"] {
 }
 
 .promedio-categoria {
-    background-color: #29166f; /* Azul oscuro */
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: #FFFFFF;
     display: flex;
     justify-content: space-between;
@@ -746,13 +692,12 @@ input[type="password"] {
 }
 
 .promedio-categoria strong {
-    color: #F1C40F; /* Amarillo contrastando en el azul */
+    color: #D4AF37; /* Nuevo Dorado */
     font-size: 1.3rem;
 }
 
-/* --- RESULTADO FINAL PONDERADO --- */
 .tarjeta-promedio-final {
-    background-color: #F1C40F; /* Fondo totalmente amarillo */
+    background-color: #D4AF37; /* Nuevo Dorado */
     border: 8px solid #000000;
     box-shadow: 10px 10px 0px rgba(0,0,0,1);
     padding: 40px;
@@ -765,7 +710,7 @@ input[type="password"] {
 
 .tarjeta-promedio-final h2 {
     font-size: 1.8rem;
-    color: #29166f; /* Azul oscuro */
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     text-transform: uppercase;
 }
 
@@ -782,7 +727,7 @@ input[type="password"] {
 .puntaje-final {
     font-size: 4rem;
     font-weight: bold;
-    color: #03923e; /* Verde oscuro para el número final */
+    color: #3A7880; /* Nuevo Verde intermedio */
 }
 
 .escala-final {
@@ -809,7 +754,6 @@ input[type="password"] {
     gap: 40px;
 }
 
-/* --- FORMULARIO DE OFERTAS --- */
 .grid-2-columnas {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -820,7 +764,7 @@ input[type="password"] {
     width: 100%;
     padding: 15px;
     margin-top: 10px;
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: #FFFFFF;
     border: 4px solid #000000;
     font-weight: bold;
@@ -830,10 +774,9 @@ input[type="password"] {
 }
 
 .btn-accion-principal:hover {
-    background-color: #03923e;
+    background-color: #3A7880; /* Nuevo Verde intermedio */
 }
 
-/* --- TARJETAS DE OFERTAS PUBLICADAS --- */
 .lista-ofertas {
     display: flex;
     flex-direction: column;
@@ -847,12 +790,11 @@ input[type="password"] {
 }
 
 .tarjeta-oferta:hover {
-    transform: translateY(-5px); /* Efecto hover solicitado mantenido aquí también */
+    transform: translateY(-5px);
 }
 
-/* Colores pastel reciclados */
-.color-fondo-1 { background-color: #dfdfca; }
-.color-fondo-2 { background-color: #cdcadf; }
+.color-fondo-1 { background-color: #F9F6ED; } /* Pastel dorado */
+.color-fondo-2 { background-color: #E8EFF2; } /* Pastel azul */
 
 .cabecera-oferta {
     display: flex;
@@ -868,7 +810,7 @@ input[type="password"] {
 }
 
 .etiqueta-postulados {
-    background-color: #F1C40F;
+    background-color: #D4AF37; /* Nuevo Dorado */
     color: #000000;
     font-weight: bold;
     border: 3px solid #000000;
@@ -888,11 +830,10 @@ input[type="password"] {
 }
 
 .btn-desplegar:hover {
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: #FFFFFF;
 }
 
-/* --- LISTA DESPLEGABLE DE POSTULANTES --- */
 .oculto {
     display: none !important;
 }
@@ -901,7 +842,7 @@ input[type="password"] {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 0 25px 25px 25px; /* Relleno solo a los lados y abajo, no arriba */
+    padding: 0 25px 25px 25px;
     border-top: 4px dashed #000000;
     margin-top: 10px;
     padding-top: 25px;
@@ -937,12 +878,12 @@ input[type="password"] {
 
 .datos-postulante p {
     font-size: 0.95rem;
-    color: #333333;
+    color: #6E7174; /* Nuevo Gris */
     font-weight: bold;
 }
 
 .btn-cv {
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: #FFFFFF;
     border: 4px solid #000000;
     padding: 10px 15px;
@@ -952,18 +893,17 @@ input[type="password"] {
 }
 
 .btn-cv:hover {
-    background-color: #03923e;
+    background-color: #3A7880; /* Nuevo Verde intermedio */
 }
 
-/* --- BOTONES DE LA TARJETA DE POSTULANTE --- */
 .acciones-postulante {
     display: flex;
     gap: 10px;
 }
 
 .btn-contratar {
-    background-color: #03923e; /* Verde oscuro para resaltar la acción principal */
-    color: #FFFFFF;
+    background-color: #6CC4A1; /* Nuevo Verde Claro */
+    color: #000000;
     border: 4px solid #000000;
     padding: 10px 15px;
     font-weight: bold;
@@ -972,31 +912,31 @@ input[type="password"] {
 }
 
 .btn-contratar:hover {
-    background-color: #1B4F35; /* Verde más oscuro */
+    background-color: #3A7880; /* Nuevo Verde intermedio */
+    color: #FFFFFF;
     transform: translateY(-3px);
 }
 
-/* --- ESTILOS DEL MODAL DE CONTRATACIÓN --- */
 .fondo-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(41, 22, 111, 0.85); /* Azul oscuro de tu paleta con transparencia */
+    background-color: rgba(26, 59, 76, 0.85); /* Nuevo Azul oscuro con transparencia (RGB) */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Asegura que esté por encima de todo */
+    z-index: 1000;
 }
 
 .tarjeta-modal {
     background-color: #FFFFFF;
     border: 6px solid #000000;
-    box-shadow: 12px 12px 0px rgba(0,0,0,1); /* Sombra extragrande para que resalte más */
+    box-shadow: 12px 12px 0px rgba(0,0,0,1);
     padding: 40px;
     width: 90%;
-    max-width: 500px; /* No permite que sea gigante en PC */
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1004,14 +944,14 @@ input[type="password"] {
 
 .titulo-modal {
     font-size: 1.6rem;
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     border-bottom: 4px solid #000000;
     padding-bottom: 10px;
 }
 
 .subtitulo-modal {
     font-size: 1.1rem;
-    color: #333333;
+    color: #6E7174; /* Nuevo Gris */
 }
 
 .formulario-modal {
@@ -1038,13 +978,13 @@ input[type="password"] {
 }
 
 .btn-cancelar:hover {
-    background-color: #D32F2F; /* Rojo para cancelar */
+    background-color: #D32F2F;
     color: #FFFFFF;
 }
 
 .btn-confirmar-contrato {
-    flex: 2; /* Ocupa más espacio visual que el de cancelar */
-    background-color: #F1C40F; /* Amarillo */
+    flex: 2;
+    background-color: #D4AF37; /* Nuevo Dorado */
     color: #000000;
     border: 4px solid #000000;
     padding: 12px;
@@ -1054,8 +994,7 @@ input[type="password"] {
 }
 
 .btn-confirmar-contrato:hover {
-    background-color: #03923e; /* Cambia a verde al confirmar */
-    color: #FFFFFF;
+    background-color: #6CC4A1; /* Nuevo Verde claro */
 }
 
 /* ================= 9. ESTILOS PARA GESTIÓN DE HORARIOS ================= */
@@ -1068,46 +1007,41 @@ input[type="password"] {
     gap: 40px;
 }
 
-/* --- ACTUALIZACIÓN TABLA DE GESTIÓN DE HORARIOS --- */
-
 .tabla-gestion {
     width: 100%;
     border-collapse: collapse;
-    min-width: 1300px; /* Un poco más ancho para dar espacio a los nombres */
+    min-width: 1300px;
     background-color: #FFFFFF;
-    table-layout: fixed; /* Asegura que todas las columnas tengan el mismo ancho */
+    table-layout: fixed;
 }
 
 .tabla-gestion th, .tabla-gestion td {
     border: 3px solid #000000;
     padding: 12px 5px;
     text-align: center;
-    font-size: 0.8rem; /* Tamaño de letra ajustado para que quepan 3 nombres */
+    font-size: 0.8rem;
     line-height: 1.3;
 }
 
-/* Encabezado azul oscuro */
 .bg-titulo {
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: white;
     font-weight: bold;
     font-size: 0.9rem !important;
 }
 
-/* Colores de primera columna (consistentes con la paleta) */
-.bg-manana { background-color: #cbdfca; font-weight: bold; }
-.bg-tarde { background-color: #dfdfca; font-weight: bold; }
-.bg-noche { background-color: #cdcadf; font-weight: bold; }
-.bg-descanso { background-color: #f2f2f2; font-weight: bold; } /* Gris muy claro para descanso */
+.bg-manana { background-color: #EAF5F1; font-weight: bold; } /* Pastel verde */
+.bg-tarde { background-color: #F9F6ED; font-weight: bold; } /* Pastel dorado */
+.bg-noche { background-color: #E8EFF2; font-weight: bold; } /* Pastel azul */
+.bg-descanso { background-color: #f2f2f2; font-weight: bold; }
 
-/* --- SECCIÓN 3: REGISTRO --- */
 .info-empleado-container {
     display: flex;
     gap: 20px;
     align-items: center;
     padding: 20px;
     border: 4px solid #000000;
-    background-color: #dfdfca;
+    background-color: #F9F6ED; /* Pastel dorado */
     margin-top: 20px;
 }
 
@@ -1126,17 +1060,14 @@ input[type="password"] {
 
 .oculto { display: none; }
 
-/* --- NUEVA CLASE PARA EL GRID DE 3 --- */
 .grid-3-columnas {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr; /* El campo de empleado es más ancho */
+    grid-template-columns: 1.5fr 1fr 1fr;
     gap: 20px;
     margin-bottom: 20px;
 }
 
-/* --- AJUSTE RESPONSIVE --- */
 @media (max-width: 900px) {
-    /* En pantallas menores a 900px, pasamos de 3 columnas a 1 para que no se aplaste el selector */
     .grid-3-columnas {
         grid-template-columns: 1fr;
     }
@@ -1153,7 +1084,6 @@ input[type="password"] {
     gap: 40px;
 }
 
-/* --- BUSCADOR --- */
 .tarjeta-busqueda {
     display: flex;
     gap: 15px;
@@ -1168,7 +1098,7 @@ input[type="password"] {
 }
 
 .btn-buscar {
-    background-color: #29166f;
+    background-color: #1A3B4C; /* Nuevo Azul oscuro */
     color: #FFFFFF;
     border: 4px solid #000000;
     padding: 0 30px;
@@ -1179,12 +1109,11 @@ input[type="password"] {
 }
 
 .btn-buscar:hover {
-    background-color: #03923e;
+    background-color: #3A7880; /* Nuevo Verde intermedio */
 }
 
-/* --- TARJETA DE PERFIL (VISTA / EDICIÓN) --- */
 .tarjeta-perfil {
-    background-color: #f2f2f2; /* Gris claro */
+    background-color: #f2f2f2;
     border: 6px solid #000000;
     box-shadow: 8px 8px 0px rgba(0,0,0,1);
     padding: 30px;
@@ -1216,14 +1145,14 @@ input[type="password"] {
 
 .caja-horas {
     flex-grow: 1;
-    background-color: #F1C40F; /* Amarillo para resaltar que es información del sistema */
+    background-color: #D4AF37; /* Nuevo Dorado */
     border: 4px solid #000000;
     padding: 20px;
 }
 
 .caja-horas h3 {
     margin-bottom: 10px;
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     font-size: 1.2rem;
     border-bottom: 2px solid #000000;
     padding-bottom: 5px;
@@ -1244,19 +1173,17 @@ input[type="password"] {
 
 .subtitulo-interno {
     font-size: 1.3rem;
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     margin-top: 10px;
     margin-bottom: 5px;
 }
 
-/* Campos deshabilitados se ven un poco diferentes para indicar que están en modo lectura */
 .edit-field:disabled {
     background-color: #e0e0e0;
     color: #333333;
     cursor: not-allowed;
 }
 
-/* --- BOTONES DE ACCIÓN PERFIL --- */
 .botones-perfil {
     display: flex;
     gap: 15px;
@@ -1267,7 +1194,7 @@ input[type="password"] {
 
 .btn-editar {
     flex: 1;
-    background-color: #F1C40F; /* Amarillo */
+    background-color: #D4AF37; /* Nuevo Dorado */
     color: #000000;
     border: 4px solid #000000;
     padding: 12px;
@@ -1277,7 +1204,7 @@ input[type="password"] {
     transition: background-color 0.2s;
 }
 
-.btn-editar:hover { background-color: #d4ac0d; }
+.btn-editar:hover { background-color: #C5A030; } /* Dorado más oscuro */
 
 .btn-eliminar {
     flex: 1;
@@ -1292,13 +1219,13 @@ input[type="password"] {
 }
 
 .btn-eliminar:hover {
-    background-color: #D32F2F; /* Rojo */
+    background-color: #D32F2F;
     color: #FFFFFF;
 }
 
 .btn-guardar {
     flex: 2;
-    background-color: #03923e; /* Verde oscuro */
+    background-color: #3A7880; /* Nuevo Verde intermedio */
     color: #FFFFFF;
     border: 4px solid #000000;
     padding: 12px;
@@ -1308,7 +1235,7 @@ input[type="password"] {
     transition: background-color 0.2s;
 }
 
-.btn-guardar:hover { background-color: #1B4F35; }
+.btn-guardar:hover { background-color: #2C5A60; } /* Verde intermedio más oscuro */
 
 /* ================= 11. ESTILOS PARA GESTIÓN DE SOLICITUDES (ADMIN) ================= */
 
@@ -1327,31 +1254,25 @@ input[type="password"] {
     gap: 20px;
 }
 
-/* --- NUEVOS COLORES DE FONDO PARA TARJETAS DE SOLICITUD --- */
-
-/* Por defecto (Nuevas - Sección 1) */
 .tarjeta-solicitud {
     border: 6px solid #000000;
-    background-color: #FFFFFF; /* Fondo blanco para las nuevas */
+    background-color: #FFFFFF;
     box-shadow: 6px 6px 0px rgba(0,0,0,1);
     transition: transform 0.2s ease;
 }
 
-/* Estado Pendiente (Sección 2) */
 .estado-borde-pendiente {
-    background-color: #FEF9E7; /* Fondo amarillo muy suave */
-    border-left: 6px solid #F1C40F;
+    background-color: #FBF7EB; /* Amarillo crema */
+    border-left: 6px solid #D4AF37; /* Nuevo Dorado */
 }
 
-/* Estado Aprobada (Sección 3) */
 .estado-borde-aprobada {
-    background-color: #E8F8F5; /* Fondo verde muy suave */
-    border-left: 6px solid #03923e;
+    background-color: #F0F9F6; /* Verde muy pálido */
+    border-left: 6px solid #6CC4A1; /* Nuevo Verde claro */
 }
 
-/* Estado Rechazada (Sección 3) */
 .estado-borde-rechazada {
-    background-color: #FDE8E8; /* Fondo rojo muy suave */
+    background-color: #FDE8E8;
     border-left: 6px solid #D32F2F;
 }
 
@@ -1373,15 +1294,12 @@ input[type="password"] {
     margin-bottom: 5px;
 }
 
-/* Ajuste para que la etiqueta "En revisión" no se corte */
-    .datos-empleado-admin {
-        display: flex;
-        flex-direction: column; /* Cambiamos a columna para apilar */
-        align-items: flex-start;
-        gap: 8px; /* Espacio entre el nombre/fecha y la etiqueta */
-    }
-
-
+.datos-empleado-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
 
 .contenido-solicitud {
     padding: 0 25px 25px 25px;
@@ -1399,13 +1317,12 @@ input[type="password"] {
 }
 
 .anexos-admin a {
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     font-weight: bold;
     text-decoration: underline;
     margin-right: 15px;
 }
 
-/* Cajas de resolución (Lo que escribe el admin) */
 .caja-motivo-resolucion {
     background-color: #f2f2f2;
     border: 3px solid #000000;
@@ -1413,15 +1330,14 @@ input[type="password"] {
     margin-top: 10px;
 }
 
-.aprobada-bg { background-color: #cbdfca; } /* Verde pastel */
-.rechazada-bg { background-color: #fce4e4; } /* Rojo pastel */
+.aprobada-bg { background-color: #EAF5F1; } /* Pastel verde */
+.rechazada-bg { background-color: #fce4e4; }
 
 .caja-motivo-resolucion h4 {
     margin-bottom: 10px;
     font-size: 1.1rem;
 }
 
-/* Botones de Resolución */
 .botones-resolucion {
     display: flex;
     gap: 15px;
@@ -1438,11 +1354,11 @@ input[type="password"] {
     transition: background-color 0.2s, color 0.2s;
 }
 
-.btn-aprobar { background-color: #03923e; color: #FFFFFF; }
-.btn-aprobar:hover { background-color: #1B4F35; }
+.btn-aprobar { background-color: #3A7880; color: #FFFFFF; } /* Nuevo Verde intermedio */
+.btn-aprobar:hover { background-color: #2C5A60; }
 
-.btn-pendiente { background-color: #F1C40F; color: #000000; }
-.btn-pendiente:hover { background-color: #d4ac0d; }
+.btn-pendiente { background-color: #D4AF37; color: #000000; } /* Nuevo Dorado */
+.btn-pendiente:hover { background-color: #C5A030; }
 
 .btn-rechazar { background-color: #D32F2F; color: #FFFFFF; }
 .btn-rechazar:hover { background-color: #9A0007; }
@@ -1458,7 +1374,6 @@ input[type="password"] {
     gap: 30px;
 }
 
-/* --- PERFIL BÁSICO --- */
 .tarjeta-perfil-basico {
     display: flex;
     align-items: center;
@@ -1480,12 +1395,12 @@ input[type="password"] {
 
 .datos-perfil-basico h2 {
     font-size: 1.8rem;
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     margin-bottom: 10px;
 }
 
 .etiqueta-rol {
-    background-color: #F1C40F;
+    background-color: #D4AF37; /* Nuevo Dorado */
     color: #000000;
     padding: 5px 15px;
     border: 3px solid #000000;
@@ -1493,9 +1408,8 @@ input[type="password"] {
     font-size: 1.1rem;
 }
 
-/* --- VISUALIZACIÓN DE CRITERIOS --- */
 .bg-azul {
-    background-color: #29166f !important;
+    background-color: #1A3B4C !important; /* Nuevo Azul oscuro */
     color: #FFFFFF !important;
 }
 
@@ -1512,7 +1426,7 @@ input[type="password"] {
 
 .btn-editar-grande {
     width: 100%;
-    background-color: #F1C40F;
+    background-color: #D4AF37; /* Nuevo Dorado */
     color: #000000;
     border: 6px solid #000000;
     box-shadow: 6px 6px 0px rgba(0,0,0,1);
@@ -1525,13 +1439,12 @@ input[type="password"] {
 }
 
 .btn-editar-grande:hover {
-    background-color: #d4ac0d;
+    background-color: #C5A030;
     transform: translateY(-5px);
 }
 
-/* --- MODAL DE EDICIÓN --- */
 .modal-scrollable {
-    max-height: 90vh; /* Para que no se salga de la pantalla si hay muchos criterios */
+    max-height: 90vh;
     overflow-y: auto;
     max-width: 700px;
 }
@@ -1549,7 +1462,7 @@ input[type="password"] {
 }
 
 .titulo-cat-edit {
-    color: #29166f;
+    color: #1A3B4C; /* Nuevo Azul oscuro */
     border-bottom: 3px solid #000000;
     padding-bottom: 10px;
     margin-bottom: 15px;
@@ -1585,8 +1498,8 @@ input[type="password"] {
 }
 
 .btn-agregar-criterio {
-    background-color: #03923e;
-    color: #FFFFFF;
+    background-color: #6CC4A1; /* Nuevo Verde claro */
+    color: #000000;
     border: 3px solid #000000;
     padding: 8px 15px;
     font-weight: bold;
@@ -1595,42 +1508,38 @@ input[type="password"] {
 }
 
 .btn-agregar-criterio:hover {
-    background-color: #1B4F35;
+    background-color: #3A7880; /* Nuevo Verde intermedio al hacer hover */
+    color: #FFFFFF;
 }
 
 /* --- CORRECCIONES VISUALES PARA GESTIÓN DE EVALUACIONES --- */
 
-/* 1. Separación del título "Criterios de Evaluación Actuales" con la cuadrícula */
 #panel-evaluacion .subtitulo-seccion {
     margin-bottom: 25px;
 }
 
-/* 2. Forzar el color blanco en los títulos h2 que están dentro de las cajas azules */
 .bg-azul h2 {
     color: #FFFFFF !important;
 }
-
 
 /* --- ACCIONES EXTRA SIN SEPARACIÓN --- */
 .contenedor-acciones-extra {
     display: flex;
     justify-content: center;
-    margin-top: -6px; /* Elimina la separación vertical con la tarjeta superior */
+    margin-top: -6px;
 }
 
 .contenedor-acciones-extra .tab-btn {
-    flex: 1; /* Hace que ambos ocupen el mismo espacio */
+    flex: 1;
     margin: 0;
-    border-radius: 0; /* Asegura que los bordes sean rectos y se toquen */
+    border-radius: 0;
     border: 6px solid #000000;
 }
 
-/* El segundo botón debe tener margen negativo para solapar el borde del primero */
 .contenedor-acciones-extra .tab-btn:nth-child(2) {
     margin-left: -6px;
 }
 
-/* Aseguramos que los inputs dentro de modales tengan estilo */
 .tarjeta-modal .input-brutalista {
     width: 100%;
     margin-bottom: 15px;
@@ -1652,7 +1561,6 @@ input[type="password"] {
         flex-direction: column;
         text-align: center;
     }
-    /* --- Ajustes para el Login (index.html) --- */
     .contenedor-principal {
         flex-direction: column;
     }
@@ -1683,7 +1591,6 @@ input[type="password"] {
         display: block;
     }
 
-    /* --- Ajustes para el Menú Superior (Principal.html y demás) --- */
     .seccion-superior {
         flex-direction: column;
         gap: 20px;
@@ -1705,7 +1612,7 @@ input[type="password"] {
 
     .nav-btn {
         width: 100%;
-        border-right: none !important; /* Limpiamos los bordes laterales en celular */
+        border-right: none !important;
         border-left: none !important;
         border-bottom: 5px solid #000000;
         padding: 15px;
@@ -1715,17 +1622,16 @@ input[type="password"] {
         border-bottom: none;
     }
 
-    /* --- Ajustes para las Noticias en celular --- */
     .tarjeta-noticia {
-        flex-direction: column !important; /* Fuerza a que en celular la imagen quede arriba y el texto abajo, sin importar si era derecha o izquierda */
+        flex-direction: column !important;
         padding: 15px;
         gap: 15px;
-        border-width: 4px; /* Un borde un poco más delgado en móvil */
+        border-width: 4px;
         box-shadow: 4px 4px 0px rgba(0,0,0,1);
     }
 
     .img-noticia {
-        width: 100%; /* La imagen ocupa todo el ancho de la tarjeta en celular */
+        width: 100%;
         max-width: 300px;
     }
 
@@ -1733,30 +1639,27 @@ input[type="password"] {
         font-size: 1.5rem;
     }
 
-    /* --- Ajustes para Horarios en celular --- */
     .resumen-horas {
         flex-direction: column;
     }
 
-    /* --- Ajustes para Solicitudes en celular --- */
     .cabecera-historial {
         flex-direction: column;
         gap: 15px;
     }
 
     .estado-etiqueta {
-        margin-left: 0 !important; /* Quitamos el margen lateral que empujaba el texto */
+        margin-left: 0 !important;
         align-self: flex-start;
-        width: fit-content; /* Se ajusta exactamente al tamaño del texto */
+        width: fit-content;
     }
 
-    /* --- Ajustes para Resultados de Evaluación en celular --- */
     .grid-evaluaciones {
-        grid-template-columns: 1fr; /* Pasa de 2 columnas a 1 columna */
+        grid-template-columns: 1fr;
     }
 
     .tarjeta-promedio-final {
-        padding: 25px; /* Reduce un poco el relleno gigante en celulares */
+        padding: 25px;
     }
 
     .contenedor-puntaje-final {
@@ -1767,9 +1670,8 @@ input[type="password"] {
         font-size: 3rem;
     }
 
-    /* --- Ajustes para Gestión de Ofertas en celular --- */
     .grid-2-columnas {
-        grid-template-columns: 1fr; /* Rompe las columnas del formulario a 1 sola */
+        grid-template-columns: 1fr;
     }
 
     .cabecera-oferta {
@@ -1792,24 +1694,22 @@ input[type="password"] {
         width: 100%;
     }
 
-    /* --- Ajustes específicos para el Registro de Horas Extra en celular --- */
     .info-empleado-container {
-        flex-direction: column; /* Apila la foto, las estadísticas y los inputs */
+        flex-direction: column;
         text-align: center;
         gap: 20px;
     }
 
     .inputs-tiempo {
-        flex-direction: column; /* Apila los dos selectores de fecha y el botón */
+        flex-direction: column;
         width: 100%;
-        gap: 15px; /* Separación extra para que no se vean pegados */
+        gap: 15px;
     }
 
     .inputs-tiempo input {
-        width: 100%; /* Asegura que ocupen todo el ancho disponible */
+        width: 100%;
     }
 
-    /* --- Ajustes para Gestión de Personal en celular --- */
     .tarjeta-busqueda {
         flex-direction: column;
     }
@@ -1833,7 +1733,6 @@ input[type="password"] {
         flex-direction: column;
     }
 
-    /* --- Ajustes para Gestión de Solicitudes en celular --- */
     .cabecera-solicitud-admin {
         flex-direction: column;
         align-items: flex-start;
